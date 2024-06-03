@@ -1,0 +1,638 @@
+
+
+
+
+
+<style>
+	.back-button-wrapp {
+		position: fixed !important;
+		bottom: 0;
+		text-align: center;
+		z-index: 1;
+		width: 100%;
+		left: 0;
+		bottom: 0;
+		padding: 15px 7px;
+		background: rgba(255,255,255,0.9);
+	}
+
+		.back-button-wrapp .btn-secondary {
+			border-width: 1px;
+			border-color: #6c757d;
+			min-width: 140px !important;
+			display: inline-block;
+			height: 40px;
+			line-height: 40px;
+			padding: 0;
+			margin: 0 2px;
+			border-radius: 5px;
+			font-size: 18px;
+			color: #000000;
+			background-color: #f7f7f7;
+			text-decoration: none;
+		}
+
+			.back-button-wrapp .btnContract:hover,
+			.back-button-wrapp .btn-secondary:hover {
+				color: #6c757d;
+				background-color: #E7EEF7;
+				border-color: #E7EEF7;
+				text-decoration: none;
+			}
+
+		.back-button-wrapp img {
+			max-width: 12px;
+			height: auto;
+			vertical-align: middle;
+			margin: 0 5px 0 0;
+		}
+</style>
+	<div class="back-button-wrapp mt-3 text-center">
+			<a id="printpdf_download_main" href="javascript:void(0);" onclick="window.print();" class="btn btn-secondary btn-pdf">
+				<img id="printpdf_download" alt="download pdf" src="/images/btn-download.png">
+				Download pdf
+			</a>
+	</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<link rel="stylesheet" href="/css/receiptUN.css" />
+
+<body>
+	<div class="receipt-container">
+		
+<div class="header">
+    <div class="three-column">
+        <div class="single-colum">
+            <div class="logo-holder">
+                <img src="/images/logo-mohre.png" alt="Logo">
+            </div>
+            <div class="tans-info">
+                <div class="barcode-holder">
+                    <span id="CoverPage2_lblBarCode" class="Barcode" style="font-family: 'Free 3 of 9';">*MB265695944AE*</span>
+                </div>
+                <div class="trans-details">
+                    <span class="tans-number">MB265695944AE</span>
+                    <span class="trans-amount"><br/><strong> &nbsp; القيمة:</strong> 136.03 AED</span>
+                </div>
+            </div>
+        </div>
+        <div class="single-colum">
+            <div class="trans-entry">
+                <span class="entry-title">
+                    Date / التاريخ
+                </span>
+                <span class="entry-detail">
+                    <span class="block">08:15:07</span>
+                    <span class="block">13/05/2024</span>
+                </span>
+            </div>
+            <div class="trans-entry">
+                <span class="entry-title">
+                    Work Office / مكتب العمل
+                </span>
+                <span class="entry-detail">
+                    Dubai <br> &#x62F;&#x628;&#x649;
+                </span>
+            </div>
+        </div>
+        <div class="single-colum">
+                <div class="trans-entry">
+                    <span class="entry-title">
+                        Establishment Name / اسم المنشأة
+                    </span>
+                    <span class="entry-detail">
+                        <div class="long-text">
+                            XIDA HOTEL MANAGEMENT LLC
+                        </div>
+                        <div class="long-text dir-right">
+                            &#x627;&#x643;&#x633;&#x64A;&#x62F;&#x629; &#x644;&#x627;&#x62F;&#x627;&#x631;&#x629; &#x641;&#x646;&#x627;&#x62F;&#x642; &#x630; &#x645; &#x645;
+                        </div>
+                    </span>
+                </div>
+            <div class="trans-entry">
+                <span class="entry-title">
+                    Type of Transaction / نوع المعاملة
+                </span>
+                <span class="entry-detail">
+                    <div class="long-text">
+                        Modifying / Deleting owners from Establishment 
+                    </div>
+                    <div class="long-text dir-right">
+                        تعديل مالك
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="qr-code-box">
+            <img src=data:image/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAmIAAAJiCAYAAABkVq7mAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAGtSSURBVHhe7dZRjiRJjkTBvv&#x2B;lZy8gC2iBhJHhSQHep4IWnjWD/u9/55xzzjlnxP2H2DnnnHPOkPsPsXPOOeecIfcfYuecc845Q&#x2B;4/xM4555xzhtx/iJ1zzjnnDLn/EDvnnHPOGXL/IXbOOeecM&#x2B;T&#x2B;Q&#x2B;ycc845Z8j9h9g555xzzpD7D7FzzjnnnCH3H2LnnHPOOUPuP8TOOeecc4bcf4idc8455wy5/xA755xzzhly/yF2zjnnnDPk/kPsnHPOOWfI/YfYOeecc86Q&#x2B;w&#x2B;xc84555wh9x9i55xzzjlD7j/EzjnnnHOG3H&#x2B;InXPOOecMuf8QO&#x2B;ecc84Zcv8hds4555wz5P5D7JxzzjlnyP2H2DnnnHPOkPsPsXPOOeecIfcfYuecc845Q&#x2B;4/xM4555xzhtx/iJ1zzjnnDLn/EDvnnHPOGXL/IXbOOeecM&#x2B;T&#x2B;Q&#x2B;ycc845Z8j9h9g555xzzpD7D7FzzjnnnCH3H2LnnHPOOUPuP8TOOeecc4bcf4idc8455wy5/xA755xzzhly/yF2zjnnnDNk/X&#x2B;I/ffffxfqphuqm25sKqWtSmlbqZtuqCl6yy82RW&#x2B;plNK2UkrbSlP0lmvu75Fa/0J91Kv/z6YbqptubCqlrUppW6mbbqgpessvNkVvqZTStlJK20pT9JZr7u&#x2B;RWv9CfdSr/8&#x2B;mG6qbbmwqpa1KaVupm26oKXrLLzZFb6mU0rZSSttKU/SWa&#x2B;7vkVr/Qn3Uq//Pphuqm25sKqWtSmlbqZtuqCl6yy82RW&#x2B;plNK2UkrbSlP0lmvu75Fa/0J91Kv/z6YbqptubCqlrUppW6mbbqgpessvNkVvqZTStlJK20pT9JZr7u&#x2B;RWv9CfdSr/8&#x2B;mG6qbbmwqpa1KaVupm26oKXrLLzZFb6mU0rZSSttKU/SWa&#x2B;7vkVr/Qn3Uq//Pphuqm25sKqWtSmlbqZtuqCl6yy82RW&#x2B;plNK2UkrbSlP0lmvu75Fa/0J91Kv/z6YbqptubCqlrUppW6mbbqgpessvNkVvqZTStlJK20pT9JZr7u&#x2B;RWv9CfdSr/8&#x2B;mG6qbbmwqpa1KaVupm26oKXrLLzZFb6mU0rZSSttKU/SWa&#x2B;7vkVr/Qn3Uq//Pphuqm25sKqWtSmlbqZtuqCl6yy82RW&#x2B;plNK2UkrbSlP0lmvu75Fa/0J9VPUV&#x2B;m1qit6ipugtlVLaqpS2qptuVOqmG&#x2B;or9NtelNJWTdFbVErbSt10Q32Ffpvabv0L9VHVV&#x2B;i3qSl6i5qit1RKaatS2qpuulGpm26or9Bve1FKWzVFb1EpbSt10w31Ffptarv1L9RHVV&#x2B;h36am6C1qit5SKaWtSmmruulGpW66ob5Cv&#x2B;1FKW3VFL1FpbSt1E031Ffot6nt1r9QH1V9hX6bmqK3qCl6S6WUtiqlreqmG5W66Yb6Cv22F6W0VVP0FpXStlI33VBfod&#x2B;mtlv/Qn1U9RX6bWqK3qKm6C2VUtqqlLaqm25U6qYb6iv0216U0lZN0VtUSttK3XRDfYV&#x2B;m9pu/Qv1UdVX6LepKXqLmqK3VEppq1Laqm66Uambbqiv0G97UUpbNUVvUSltK3XTDfUV&#x2B;m1qu/Uv1EdVX6HfpqboLWqK3lIppa1Kaau66UalbrqhvkK/7UUpbdUUvUWltK3UTTfUV&#x2B;i3qe3Wv1AfVX2FfpuaoreoKXpLpZS2KqWt6qYblbrphvoK/bYXpbRVU/QWldK2UjfdUF&#x2B;h36a2W/9CfVT1FfptaoreoqboLZVS2qqUtqqbblTqphvqK/TbXpTSVk3RW1RK20rddEN9hX6b2m79C/VR1Vfot6kpeouaordUSmmrUtqqbrpRqZtuqK/Qb3tRSls1RW9RKW0rddMN9RX6bWq79S/UR1UpbV&#x2B;U0laltH1RSttKKW3VV&#x2B;i3qZS2lbbTm1VK2xeltFVT9BaV0laltFXddEOltH1RSlu13foX6qOqlLYvSmmrUtq&#x2B;KKVtpZS26iv021RK20rb6c0qpe2LUtqqKXqLSmmrUtqqbrqhUtq&#x2B;KKWt2m79C/VRVUrbF6W0VSltX5TStlJKW/UV&#x2B;m0qpW2l7fRmldL2RSlt1RS9RaW0VSltVTfdUCltX5TSVm23/oX6qCql7YtS2qqUti9KaVsppa36Cv02ldK20nZ6s0pp&#x2B;6KUtmqK3qJS2qqUtqqbbqiUti9Kaau2W/9CfVSV0vZFKW1VStsXpbStlNJWfYV&#x2B;m0ppW2k7vVmltH1RSls1RW9RKW1VSlvVTTdUStsXpbRV261/oT6qSmn7opS2KqXti1LaVkppq75Cv02ltK20nd6sUtq&#x2B;KKWtmqK3qJS2KqWt6qYbKqXti1Laqu3Wv1AfVaW0fVFKW5XS9kUpbSultFVfod&#x2B;mUtpW2k5vViltX5TSVk3RW1RKW5XSVnXTDZXS9kUpbdV261&#x2B;oj6pS2r4opa1KafuilLaVUtqqr9BvUyltK22nN6uUti9Kaaum6C0qpa1Kaau66YZKafuilLZqu/Uv1EdVKW1flNJWpbR9UUrbSilt1Vfot6mUtpW205tVStsXpbRVU/QWldJWpbRV3XRDpbR9UUpbtd36F&#x2B;qjqpS2L0ppq1LaviilbaWUtuor9NtUSttK2&#x2B;nNKqXti1Laqil6i0ppq1Laqm66oVLaviilrdpu/Qv1UVVK2xeltFXddEOltFUpbVVK2ysvpa2aordUmqK3qCl6i&#x2B;qmGyqlrUppq1LaqpS2L0ppq7Zb/0J9VJXS9kUpbVU33VApbVVKW5XS9spLaaum6C2Vpugtaoreorrphkppq1LaqpS2KqXti1Laqu3Wv1AfVaW0fVFKW9VNN1RKW5XSVqW0vfJS2qopekulKXqLmqK3qG66oVLaqpS2KqWtSmn7opS2arv1L9RHVSltX5TSVnXTDZXSVqW0VSltr7yUtmqK3lJpit6ipugtqptuqJS2KqWtSmmrUtq&#x2B;KKWt2m79C/VRVUrbF6W0Vd10Q6W0VSltVUrbKy&#x2B;lrZqit1SaoreoKXqL6qYbKqWtSmmrUtqqlLYvSmmrtlv/Qn1UldL2RSltVTfdUCltVUpbldL2yktpq6boLZWm6C1qit6iuumGSmmrUtqqlLYqpe2LUtqq7da/UB9VpbR9UUpb1U03VEpbldJWpbS98lLaqil6S6UpeouaoreobrqhUtqqlLYqpa1KafuilLZqu/Uv1EdVKW1flNJWddMNldJWpbRVKW2vvJS2aoreUmmK3qKm6C2qm26olLYqpa1KaatS2r4opa3abv0L9VFVStsXpbRV3XRDpbRVKW1VStsrL6WtmqK3VJqit6gpeovqphsqpa1KaatS2qqUti9Kaau2W/9CfVSV0vZFKW1VN91QKW1VSluV0vbKS2mrpugtlaboLWqK3qK66YZKaatS2qqUtiql7YtS2qrt1r9QH1WltH1RSluV0laltH1RSttK3XRDpbSt1E03frGUtpvqphsqpe0vNkVvUSltX5TSVm23/oX6qCql7YtS2qqUtiql7YtS2lbqphsqpW2lbrrxi6W03VQ33VApbX&#x2B;xKXqLSmn7opS2arv1L9RHVSltX5TSVqW0VSltX5TStlI33VApbSt1041fLKXtprrphkpp&#x2B;4tN0VtUStsXpbRV261/oT6qSmn7opS2KqWtSmn7opS2lbrphkppW6mbbvxiKW031U03VErbX2yK3qJS2r4opa3abv0L9VFVStsXpbRVKW1VStsXpbSt1E03VErbSt104xdLabupbrqhUtr&#x2B;YlP0FpXS9kUpbdV261&#x2B;oj6pS2r4opa1KaatS2r4opW2lbrqhUtpW6qYbv1hK20110w2V0vYXm6K3qJS2L0ppq7Zb/0J9VJXS9kUpbVVKW5XS9kUpbSt10w2V0rZSN934xVLabqqbbqiUtr/YFL1FpbR9UUpbtd36F&#x2B;qjqpS2L0ppq1LaqpS2L0ppW6mbbqiUtpW66cYvltJ2U910Q6W0/cWm6C0qpe2LUtqq7da/UB9VpbR9UUpbldJWpbR9UUrbSt10Q6W0rdRNN36xlLab6qYbKqXtLzZFb1EpbV&#x2B;U0lZtt/6F&#x2B;qgqpe2LUtqqlLYqpe2LUtpW6qYbKqVtpW668YultN1UN91QKW1/sSl6i0pp&#x2B;6KUtmq79S/UR1Vfod&#x2B;mUtqqlLYqpW2lr9BvUyltNzVFb6mU0lZN0VtelNJWddMNNUVvUV&#x2B;h36a2W/9CfVT1FfptKqWtSmmrUtpW&#x2B;gr9NpXSdlNT9JZKKW3VFL3lRSltVTfdUFP0FvUV&#x2B;m1qu/Uv1EdVX6HfplLaqpS2KqVtpa/Qb1MpbTc1RW&#x2B;plNJWTdFbXpTSVnXTDTVFb1Ffod&#x2B;mtlv/Qn1U9RX6bSqlrUppq1LaVvoK/TaV0nZTU/SWSilt1RS95UUpbVU33VBT9Bb1Ffptarv1L9RHVV&#x2B;h36ZS2qqUtiqlbaWv0G9TKW03NUVvqZTSVk3RW16U0lZ10w01RW9RX6HfprZb/0J9VPUV&#x2B;m0qpa1KaatS2lb6Cv02ldJ2U1P0lkopbdUUveVFKW1VN91QU/QW9RX6bWq79S/UR1Vfod&#x2B;mUtqqlLYqpW2lr9BvUyltNzVFb6mU0lZN0VtelNJWddMNNUVvUV&#x2B;h36a2W/9CfVT1FfptKqWtSmmrUtpW&#x2B;gr9NpXSdlNT9JZKKW3VFL3lRSltVTfdUFP0FvUV&#x2B;m1qu/Uv1EdVX6HfplLaqpS2KqVtpa/Qb1MpbTc1RW&#x2B;plNJWTdFbXpTSVnXTDTVFb1Ffod&#x2B;mtlv/Qn1U9RX6bSqlrUppq1LaVvoK/TaV0nZTU/SWSilt1RS95UUpbVU33VBT9Bb1Ffptarv1L9RHvfI/m7Yqpa1KaatS2qqUtiqlrUppq1LaqpS2KqWtSmmrUtqqlLYqpa1KaatS2qqUtiqlrUppq1LaXvn3m7L&#x2B;hfqo19/7P46UtiqlrUppq1LaqpS2KqWtSmmrUtqqlLYqpa1KaatS2qqUtiqlrUppq1LaqpS2V/79pqx/oT7q9ff&#x2B;jyOlrUppq1LaqpS2KqWtSmmrUtqqlLYqpa1KaatS2qqUtiqlrUppq1LaqpS2KqXtlX&#x2B;/KetfqI96/b3/40hpq1LaqpS2KqWtSmmrUtqqlLYqpa1KaatS2qqUtiqlrUppq1LaqpS2KqWtSml75d9vyvoX6qNef&#x2B;//OFLaqpS2KqWtSmmrUtqqlLYqpa1KaatS2qqUtiqlrUppq1LaqpS2KqWtSmmrUtpe&#x2B;febsv6F&#x2B;qjX3/s/jpS2KqWtSmmrUtqqlLYqpa1KaatS2qqUtiqlrUppq1LaqpS2KqWtSmmrUtqqlLZX/v2mrH&#x2B;hPur19/6PI6WtSmmrUtqqlLYqpa1KaatS2qqUtiqlrUppq1LaqpS2KqWtSmmrUtqqlLYqpe2Vf78p61&#x2B;oj3r9vf/jSGmrUtqqlLYqpa1KaatS2qqUtiqlrUppq1LaqpS2KqWtSmmrUtqqlLYqpa1KaXvl32/K&#x2B;hfqo15/7/84UtqqlLYqpa1KaatS2qqUtiqlrUppq1LaqpS2KqWtSmmrUtqqlLYqpa1KaatS2l7595uy/oX6qNff&#x2B;z&#x2B;OlLYqpa1KaatS2qqUtiqlrUppq1LaqpS2KqWtSmmrUtqqlLYqpa1KaatS2qqUtlf&#x2B;/absf&#x2B;FZRf/IK3XTDdVNN17UTTdUSls1RW9R3XSjUjfdeNE5f9H9yz//RP/nWambbqhuuvGibrqhUtqqKXqL6qYblbrpxovO&#x2B;YvuX/75J/o/z0rddEN1040XddMNldJWTdFbVDfdqNRNN150zl90//LPP9H/eVbqphuqm268qJtuqJS2aoreorrpRqVuuvGic/6i&#x2B;5d//on&#x2B;z7NSN91Q3XTjRd10Q6W0VVP0FtVNNyp1040XnfMX3b/880/0f56VuumG6qYbL&#x2B;qmGyqlrZqit6huulGpm2686Jy/6P7ln3&#x2B;i//Os1E03VDfdeFE33VApbdUUvUV1041K3XTjRef8Rfcv//wT/Z9npW66obrpxou66YZKaaum6C2qm25U6qYbLzrnL7p/&#x2B;eef6P88K3XTDdVNN17UTTdUSls1RW9R3XSjUjfdeNE5f9H9yz//RP/nWambbqhuuvGibrqhUtqqKXqL6qYblbrpxovO&#x2B;Ys&#x2B;8y9f/6NW3XRDpbRVKW1VN92oNEVvqZTS9porpa1KaVsppe0vltK2UjfdUCltK6W0VX/NZ36x/piqm26olLYqpa3qphuVpugtlVLaXnOltFUpbSultP3FUtpW6qYbKqVtpZS26q/5zC/WH1N10w2V0laltFXddKPSFL2lUkrba66UtiqlbaWUtr9YSttK3XRDpbStlNJW/TWf&#x2B;cX6Y6puuqFS2qqUtqqbblSaordUSml7zZXSVqW0rZTS9hdLaVupm26olLaVUtqqv&#x2B;Yzv1h/TNVNN1RKW5XSVnXTjUpT9JZKKW2vuVLaqpS2lVLa/mIpbSt10w2V0rZSSlv113zmF&#x2B;uPqbrphkppq1Laqm66UWmK3lIppe01V0pbldK2UkrbXyylbaVuuqFS2lZKaav&#x2B;ms/8Yv0xVTfdUCltVUpb1U03Kk3RWyqltL3mSmmrUtpWSmn7i6W0rdRNN1RK20opbdVf85lfrD&#x2B;m6qYbKqWtSmmruulGpSl6S6WUttdcKW1VSttKKW1/sZS2lbrphkppWymlrfprPvOL9cdU3XRDpbRVKW1VN92oNEVvqZTS9porpa1KaVsppe0vltK2UjfdUCltK6W0VX/NZ36x/piqm26olLYqpa3qphuVpugtlVLaXnOltFUpbSultP3FUtpW6qYbKqVtpZS26q/5c79Yf/RNddONSiltVUrbSiltK03RW16U0lZN0VtelNJWpbRV3XTjypuit6hjf&#x2B;7L6B/HprrpRqWUtiqlbaWUtpWm6C0vSmmrpugtL0ppq1Laqm66ceVN0VvUsT/3ZfSPY1PddKNSSluV0rZSSttKU/SWF6W0VVP0lheltFUpbVU33bjypugt6tif&#x2B;zL6x7GpbrpRKaWtSmlbKaVtpSl6y4tS2qopesuLUtqqlLaqm25ceVP0FnXsz30Z/ePYVDfdqJTSVqW0rZTSttIUveVFKW3VFL3lRSltVUpb1U03rrwpeos69ue&#x2B;jP5xbKqbblRKaatS2lZKaVtpit7yopS2aore8qKUtiqlreqmG1feFL1FHftzX0b/ODbVTTcqpbRVKW0rpbStNEVveVFKWzVFb3lRSluV0lZ1040rb4reoo79uS&#x2B;jfxyb6qYblVLaqpS2lVLaVpqit7wopa2aore8KKWtSmmruunGlTdFb1HH/tyX0T&#x2B;OTXXTjUopbVVK20opbStN0VtelNJWTdFbXpTSVqW0Vd1048qboreoY3/uy&#x2B;gfx6a66UallLYqpW2llLaVpugtL0ppq6boLS9KaatS2qpuunHlTdFb1LHPfBn90VVK202ltFXb6c1qO71ZddONXyylbaWUtpVS2qpuuqFS2qpuurGpbrpRaYreorbb/8KQPr5KabuplLZqO71Zbac3q2668YultK2U0rZSSlvVTTdUSlvVTTc21U03Kk3RW9R2&#x2B;18Y0sdXKW03ldJWbac3q&#x2B;30ZtVNN36xlLaVUtpWSmmruumGSmmruunGprrpRqUpeovabv8LQ/r4KqXtplLaqu30ZrWd3qy66cYvltK2UkrbSiltVTfdUCltVTfd2FQ33ag0RW9R2&#x2B;1/YUgfX6W03VRKW7Wd3qy205tVN934xVLaVkppWymlreqmGyqlreqmG5vqphuVpugtarv9Lwzp46uUtptKaau205vVdnqz6qYbv1hK20opbSultFXddEOltFXddGNT3XSj0hS9RW23/4UhfXyV0nZTKW3Vdnqz2k5vVt104xdLaVsppW2llLaqm26olLaqm25sqptuVJqit6jt9r8wpI&#x2B;vUtpuKqWt2k5vVtvpzaqbbvxiKW0rpbStlNJWddMNldJWddONTXXTjUpT9Ba13f4XhvTxVUrbTaW0VdvpzWo7vVl1041fLKVtpZS2lVLaqm66oVLaqm66saluulFpit6ittv/wpA&#x2B;vkppu6mUtmo7vVltpzerbrrxi6W0rZTStlJKW9VNN1RKW9VNNzbVTTcqTdFb1Hb7XxjSx39RSluV0rbSFL1FpbR9UTfdqJTS9stN0VtelNK20lfot6nt9OZKp&#x2B;YzX1D/OF6U0laltK00RW9RKW1f1E03KqW0/XJT9JYXpbSt9BX6bWo7vbnSqfnMF9Q/jheltFUpbStN0VtUStsXddONSiltv9wUveVFKW0rfYV&#x2B;m9pOb650aj7zBfWP40UpbVVK20pT9BaV0vZF3XSjUkrbLzdFb3lRSttKX6HfprbTmyudms98Qf3jeFFKW5XSttIUvUWltH1RN92olNL2y03RW16U0rbSV&#x2B;i3qe305kqn5jNfUP84XpTSVqW0rTRFb1EpbV/UTTcqpbT9clP0lheltK30Ffptaju9udKp&#x2B;cwX1D&#x2B;OF6W0VSltK03RW1RK2xd1041KKW2/3BS95UUpbSt9hX6b2k5vrnRqPvMF9Y/jRSltVUrbSlP0FpXS9kXddKNSStsvN0VveVFK20pfod&#x2B;mttObK52az3xB/eN4UUpbldK20hS9RaW0fVE33aiU0vbLTdFbXpTSttJX6Lep7fTmSqfmM19Q/zhelNJWpbStNEVvUSltX9RNNyqltP1yU/SWF6W0rfQV&#x2B;m1qO7250qm5L/j/0D&#x2B;2TXXTDdVNN1RKW9VNNyp10w21nd78i6W0rZTStlJK20opbSt10w2V0rZSN92otN3&#x2B;Fw7RH3NT3XRDddMNldJWddONSt10Q22nN/9iKW0rpbStlNK2UkrbSt10Q6W0rdRNNyptt/&#x2B;FQ/TH3FQ33VDddEOltFXddKNSN91Q2&#x2B;nNv1hK20opbSultK2U0rZSN91QKW0rddONStvtf&#x2B;EQ/TE31U03VDfdUCltVTfdqNRNN9R2evMvltK2UkrbSiltK6W0rdRNN1RK20rddKPSdvtfOER/zE110w3VTTdUSlvVTTcqddMNtZ3e/IultK2U0rZSSttKKW0rddMNldK2UjfdqLTd/hcO0R9zU910Q3XTDZXSVnXTjUrddENtpzf/YiltK6W0rZTStlJK20rddEOltK3UTTcqbbf/hUP0x9xUN91Q3XRDpbRV3XSjUjfdUNvpzb9YSttKKW0rpbStlNK2UjfdUCltK3XTjUrb7X/hEP0xN9VNN1Q33VApbVU33ajUTTfUdnrzL5bStlJK20opbSultK3UTTdUSttK3XSj0nb7XzhEf8xNddMN1U03VEpb1U03KnXTDbWd3vyLpbStlNK2UkrbSiltK3XTDZXStlI33ai03f4XDtEfc1PddEN10w2V0lZ1041K3XRDbac3/2IpbSultK2U0rZSSttK3XRDpbSt1E03Km23/oX6qL9YN91Q3XRDpbRVKW0rfYV&#x2B;m9pOb66U0rZSN91QU/SWSt104xdLaau66YZKaau2W/9CfdRfrJtuqG66oVLaqpS2lb5Cv01tpzdXSmlbqZtuqCl6S6VuuvGLpbRV3XRDpbRV261/oT7qL9ZNN1Q33VApbVVK20pfod&#x2B;mttObK6W0rdRNN9QUvaVSN934xVLaqm66oVLaqu3Wv1Af9Rfrphuqm26olLYqpW2lr9BvU9vpzZVS2lbqphtqit5SqZtu/GIpbVU33VApbdV261&#x2B;oj/qLddMN1U03VEpbldK20lfot6nt9OZKKW0rddMNNUVvqdRNN36xlLaqm26olLZqu/Uv1Ef9xbrphuqmGyqlrUppW&#x2B;kr9NvUdnpzpZS2lbrphpqit1Tqphu/WEpb1U03VEpbtd36F&#x2B;qj/mLddEN10w2V0laltK30Ffptaju9uVJK20rddENN0VsqddONXyylreqmGyqlrdpu/Qv1UX&#x2B;xbrqhuumGSmmrUtpW&#x2B;gr9NrWd3lwppW2lbrqhpugtlbrpxi&#x2B;W0lZ10w2V0lZtt/6F&#x2B;qi/WDfdUN10Q6W0VSltK32FfpvaTm&#x2B;ulNK2UjfdUFP0lkrddOMXS2mruumGSmmrtlv/Qn3UX6ybbqhuuqFS2qqUtpW&#x2B;Qr9Nbac3V0ppW6mbbqgpekulbrrxi6W0Vd10Q6W0Vdvtf&#x2B;Fy&#x2B;qOrlLYqpW2llLYqpW2lbrrxi3XTjU2ltFUpbdV2evP1nf8dddONF223/4XL6Y&#x2B;uUtqqlLaVUtqqlLaVuunGL9ZNNzaV0laltFXb6c3Xd/531E03XrTd/hcupz&#x2B;6SmmrUtpWSmmrUtpW6qYbv1g33dhUSluV0lZtpzdf3/nfUTfdeNF2&#x2B;1&#x2B;4nP7oKqWtSmlbKaWtSmlbqZtu/GLddGNTKW1VSlu1nd58fed/R91040Xb7X/hcvqjq5S2KqVtpZS2KqVtpW668Yt1041NpbRVKW3Vdnrz9Z3/HXXTjRdtt/&#x2B;Fy&#x2B;mPrlLaqpS2lVLaqpS2lbrpxi/WTTc2ldJWpbRV2&#x2B;nN13f&#x2B;d9RNN1603f4XLqc/ukppq1LaVkppq1LaVuqmG79YN93YVEpbldJWbac3X9/531E33XjRdvtfuJz&#x2B;6CqlrUppWymlrUppW6mbbvxi3XRjUyltVUpbtZ3efH3nf0fddONF2&#x2B;1/4XL6o6uUtiqlbaWUtiqlbaVuuvGLddONTaW0VSlt1XZ68/Wd/x11040Xbbf/hcvpj65S2qqUtpVS2qqUtpW66cYv1k03NpXSVqW0Vdvpzdd3/nfUTTdetN3&#x2B;F4b08VVK2xd1041K3XTjy6W0rTRFb1HddENtpzerlLabSmlbqZtuqG66oVLaVjr2mS&#x2B;jP7pKafuibrpRqZtufLmUtpWm6C2qm26o7fRmldJ2UyltK3XTDdVNN1RK20rHPvNl9EdXKW1f1E03KnXTjS&#x2B;X0rbSFL1FddMNtZ3erFLabiqlbaVuuqG66YZKaVvp2Ge&#x2B;jP7oKqXti7rpRqVuuvHlUtpWmqK3qG66obbTm1VK202ltK3UTTdUN91QKW0rHfvMl9EfXaW0fVE33ajUTTe&#x2B;XErbSlP0FtVNN9R2erNKabuplLaVuumG6qYbKqVtpWOf&#x2B;TL6o6uUti/qphuVuunGl0tpW2mK3qK66YbaTm9WKW03ldK2UjfdUN10Q6W0rXTsM19Gf3SV0vZF3XSjUjfd&#x2B;HIpbStN0VtUN91Q2&#x2B;nNKqXtplLaVuqmG6qbbqiUtpWOfebL6I&#x2B;uUtq&#x2B;qJtuVOqmG18upW2lKXqL6qYbaju9WaW03VRK20rddEN10w2V0rbSsc98Gf3RVUrbF3XTjUrddOPLpbStNEVvUd10Q22nN6uUtptKaVupm26obrqhUtpWOvaZL6M/ukpp&#x2B;6JuulGpm258uZS2laboLaqbbqjt9GaV0nZTKW0rddMN1U03VErbSsc&#x2B;82X0R39RN92o1E03NtVNN9QUvaVSN93YVErbSiltK6W0/cVS2qqUtmqK3rKpv&#x2B;Yzv1h/zBd1041K3XRjU910Q03RWyp1041NpbStlNK2UkrbXyylrUppq6boLZv6az7zi/XHfFE33ajUTTc21U031BS9pVI33dhUSttKKW0rpbT9xVLaqpS2aoresqm/5jO/WH/MF3XTjUrddGNT3XRDTdFbKnXTjU2ltK2U0rZSSttfLKWtSmmrpugtm/prPvOL9cd8UTfdqNRNNzbVTTfUFL2lUjfd2FRK20opbSultP3FUtqqlLZqit6yqb/mM79Yf8wXddONSt10Y1PddENN0VsqddONTaW0rZTStlJK218spa1Kaaum6C2b&#x2B;ms&#x2B;84v1x3xRN92o1E03NtVNN9QUvaVSN93YVErbSiltK6W0/cVS2qqUtmqK3rKpv&#x2B;Yzv1h/zBd1041K3XRjU910Q03RWyp1041NpbStlNK2UkrbXyylrUppq6boLZv6az7zi/XHfFE33ajUTTc21U031BS9pVI33dhUSttKKW0rpbT9xVLaqpS2aoresqm/5jO/WH/MF3XTjUrddGNT3XRDTdFbKnXTjU2ltK2U0rZSSttfLKWtSmmrpugtm/pr1v9i/ZEqTdFbVDfdUN10o1JK2xdN0VtUSlvVTTcqpbT9ciltVTfdUN10o1JK20opbVVK20opbdV261&#x2B;oj1ppit6iuumG6qYblVLavmiK3qJS2qpuulEppe2XS2mruumG6qYblVLaVkppq1LaVkppq7Zb/0J91EpT9BbVTTdUN92olNL2RVP0FpXSVnXTjUopbb9cSlvVTTdUN92olNK2UkpbldK2Ukpbtd36F&#x2B;qjVpqit6huuqG66UallLYvmqK3qJS2qptuVEpp&#x2B;&#x2B;VS2qpuuqG66UallLaVUtqqlLaVUtqq7da/UB&#x2B;10hS9RXXTDdVNNyqltH3RFL1FpbRV3XSjUkrbL5fSVnXTDdVNNyqltK2U0laltK2U0lZtt/6F&#x2B;qiVpugtqptuqG66USml7Yum6C0qpa3qphuVUtp&#x2B;uZS2qptuqG66USmlbaWUtiqlbaWUtmq79S/UR600RW9R3XRDddONSiltXzRFb1EpbVU33aiU0vbLpbRV3XRDddONSiltK6W0VSltK6W0Vdutf6E&#x2B;aqUpeovqphuqm25USmn7oil6i0ppq7rpRqWUtl8upa3qphuqm25USmlbKaWtSmlbKaWt2m79C/VRK03RW1Q33VDddKNSStsXTdFbVEpb1U03KqW0/XIpbVU33VDddKNSSttKKW1VSttKKW3VdutfqI9aaYreorrphuqmG5VS2r5oit6iUtqqbrpRKaXtl0tpq7rphuqmG5VS2lZKaatS2lZKaau2W/9CfdRKKW0rpbT9xbbTm1VKW9VNNyqltK2U0rbSFL1FpbRVKW1VSluV0rZSN92o1E03VEpb1U031HbrX6iPWimlbaWUtr/YdnqzSmmruulGpZS2lVLaVpqit6iUtiqlrUppq1LaVuqmG5W66YZKaau66Ybabv0L9VErpbStlNL2F9tOb1YpbVU33aiU0rZSSttKU/QWldJWpbRVKW1VSttK3XSjUjfdUCltVTfdUNutf6E&#x2B;aqWUtpVS2v5i2&#x2B;nNKqWt6qYblVLaVkppW2mK3qJS2qqUtiqlrUppW6mbblTqphsqpa3qphtqu/Uv1EetlNK2UkrbX2w7vVmltFXddKNSSttKKW0rTdFbVEpbldJWpbRVKW0rddONSt10Q6W0Vd10Q223/oX6qJVS2lZKafuLbac3q5S2qptuVEppWymlbaUpeotKaatS2qqUtiqlbaVuulGpm26olLaqm26o7da/UB&#x2B;1UkrbSiltf7Ht9GaV0lZ1041KKW0rpbStNEVvUSltVUpbldJWpbSt1E03KnXTDZXSVnXTDbXd&#x2B;hfqo1ZKaVsppe0vtp3erFLaqm66USmlbaWUtpWm6C0qpa1KaatS2qqUtpW66UalbrqhUtqqbrqhtlv/Qn3USiltK6W0/cW205tVSlvVTTcqpbStlNK20hS9RaW0VSltVUpbldK2UjfdqNRNN1RKW9VNN9R261&#x2B;oj1oppW2llLa/2HZ6s0ppq7rpRqWUtpVS2laaoreolLYqpa1KaatS2lbqphuVuumGSmmruumG2m7/C0P6&#x2B;JW&#x2B;Qr9NpbTdVEpbtZ3erLbTm1VK20opbVU33XhRSlu1nd5caYre8qKUtuorPvNL9Eeq9BX6bSql7aZS2qrt9Ga1nd6sUtpWSmmruunGi1Laqu305kpT9JYXpbRVX/GZX6I/UqWv0G9TKW03ldJWbac3q&#x2B;30ZpXStlJKW9VNN16U0lZtpzdXmqK3vCilrfqKz/wS/ZEqfYV&#x2B;m0ppu6mUtmo7vVltpzerlLaVUtqqbrrxopS2aju9udIUveVFKW3VV3zml&#x2B;iPVOkr9NtUSttNpbRV2&#x2B;nNaju9WaW0rZTSVnXTjReltFXb6c2VpugtL0ppq77iM79Ef6RKX6HfplLabiqlrdpOb1bb6c0qpW2llLaqm268KKWt2k5vrjRFb3lRSlv1FZ/5JfojVfoK/TaV0nZTKW3Vdnqz2k5vViltK6W0Vd1040UpbdV2enOlKXrLi1Laqq/4zC/RH6nSV&#x2B;i3qZS2m0ppq7bTm9V2erNKaVsppa3qphsvSmmrttObK03RW16U0lZ9xWd&#x2B;if5Ilb5Cv02ltN1USlu1nd6sttObVUrbSiltVTfdeFFKW7Wd3lxpit7yopS26is&#x2B;80v0R6r0FfptKqXtplLaqu30ZrWd3qxS2lZKaau66caLUtqq7fTmSlP0lheltFVfsf6X6OOrlLaVuumG6qYbqptufLluuqFS2qqUtiql7S&#x2B;W0rZSSttK3XRDpbSt1E03frFj67&#x2B;M/pgqpW2lbrqhuumG6qYbX66bbqiUtiqlrUpp&#x2B;4ultK2U0rZSN91QKW0rddONX&#x2B;zY&#x2B;i&#x2B;jP6ZKaVupm26obrqhuunGl&#x2B;umGyqlrUppq1La/mIpbSultK3UTTdUSttK3XTjFzu2/svoj6lS2lbqphuqm26obrrx5brphkppq1LaqpS2v1hK20opbSt10w2V0rZSN934xY6t/zL6Y6qUtpW66Ybqphuqm258uW66oVLaqpS2KqXtL5bStlJK20rddEOltK3UTTd&#x2B;sWPrv4z&#x2B;mCqlbaVuuqG66YbqphtfrptuqJS2KqWtSmn7i6W0rZTStlI33VApbSt1041f7Nj6L6M/pkppW6mbbqhuuqG66caX66YbKqWtSmmrUtr&#x2B;YiltK6W0rdRNN1RK20rddOMXO7b&#x2B;y&#x2B;iPqVLaVuqmG6qbbqhuuvHluumGSmmrUtqqlLa/WErbSiltK3XTDZXStlI33fjFjq3/MvpjqpS2lbrphuqmG6qbbny5brqhUtqqlLYqpe0vltK2UkrbSt10Q6W0rdRNN36xY&#x2B;u/jP6YKqVtpW66obrphuqmG1&#x2B;um26olLYqpa1KafuLpbStlNK2UjfdUCltK3XTjV/s2Povoz/mL9ZNNyp1041K3XRDpbRVKW3VV&#x2B;i3VZqit6huuqFS2qpuuqG66cYvltJWddMN9des/8X6I/1i3XSjUjfdqNRNN1RKW5XSVn2FflulKXqL6qYbKqWt6qYbqptu/GIpbVU33VB/zfpfrD/SL9ZNNyp1041K3XRDpbRVKW3VV&#x2B;i3VZqit6huuqFS2qpuuqG66cYvltJWddMN9des/8X6I/1i3XSjUjfdqNRNN1RKW5XSVn2FflulKXqL6qYbKqWt6qYbqptu/GIpbVU33VB/zfpfrD/SL9ZNNyp1041K3XRDpbRVKW3VV&#x2B;i3VZqit6huuqFS2qpuuqG66cYvltJWddMN9des/8X6I/1i3XSjUjfdqNRNN1RKW5XSVn2FflulKXqL6qYbKqWt6qYbqptu/GIpbVU33VB/zfpfrD/SL9ZNNyp1041K3XRDpbRVKW3VV&#x2B;i3VZqit6huuqFS2qpuuqG66cYvltJWddMN9des/8X6I/1i3XSjUjfdqNRNN1RKW5XSVn2FflulKXqL6qYbKqWt6qYbqptu/GIpbVU33VB/zfpfrD/SL9ZNNyp1041K3XRDpbRVKW3VV&#x2B;i3VZqit6huuqFS2qpuuqG66cYvltJWddMN9des/8X6I/1i3XSjUjfdqNRNN1RKW5XSVn2FflulKXqL6qYbKqWt6qYbqptu/GIpbVU33VB/zZ/7xfqjV0ppu6luuvGibrqhttObK32FflullLYv6qYblVLaXv3fL6Wt6qYbarv9L2ymP1KllLab6qYbL&#x2B;qmG2o7vbnSV&#x2B;i3VUpp&#x2B;6JuulEppe3V//1S2qpuuqG22//CZvojVUppu6luuvGibrqhttObK32FflullLYv6qYblVLaXv3fL6Wt6qYbarv9L2ymP1KllLab6qYbL&#x2B;qmG2o7vbnSV&#x2B;i3VUpp&#x2B;6JuulEppe3V//1S2qpuuqG22//CZvojVUppu6luuvGibrqhttObK32FflullLYv6qYblVLaXv3fL6Wt6qYbarv9L2ymP1KllLab6qYbL&#x2B;qmG2o7vbnSV&#x2B;i3VUpp&#x2B;6JuulEppe3V//1S2qpuuqG22//CZvojVUppu6luuvGibrqhttObK32FflullLYv6qYblVLaXv3fL6Wt6qYbarv9L2ymP1KllLab6qYbL&#x2B;qmG2o7vbnSV&#x2B;i3VUpp&#x2B;6JuulEppe3V//1S2qpuuqG22//CZvojVUppu6luuvGibrqhttObK32FflullLYv6qYblVLaXv3fL6Wt6qYbarv9L2ymP1KllLab6qYbL&#x2B;qmG2o7vbnSV&#x2B;i3VUpp&#x2B;6JuulEppe3V//1S2qpuuqG2W/9CfVSV0lZ9hX6b6qYblf4afYNKKW1VN9140RS95UUpbSttpzerlLaVUtpWSmmruumG2m79C/VRVUpb9RX6baqbblT6a/QNKqW0Vd1040VT9JYXpbSttJ3erFLaVkppWymlreqmG2q79S/UR1UpbdVX6LepbrpR6a/RN6iU0lZ1040XTdFbXpTSttJ2erNKaVsppW2llLaqm26o7da/UB9VpbRVX6HfprrpRqW/Rt&#x2B;gUkpb1U03XjRFb3lRSttK2&#x2B;nNKqVtpZS2lVLaqm66obZb/0J9VJXSVn2FfpvqphuV/hp9g0opbVU33XjRFL3lRSltK22nN6uUtpVS2lZKaau66Ybabv0L9VFVSlv1FfptqptuVPpr9A0qpbRV3XTjRVP0lheltK20nd6sUtpWSmlbKaWt6qYbarv1L9RHVSlt1Vfot6luulHpr9E3qJTSVnXTjRdN0VtelNK20nZ6s0ppWymlbaWUtqqbbqjt1r9QH1WltFVfod&#x2B;muulGpb9G36BSSlvVTTdeNEVveVFK20rb6c0qpW2llLaVUtqqbrqhtlv/Qn1UldJWfYV&#x2B;m&#x2B;qmG5X&#x2B;Gn2DSiltVTfdeNEUveVFKW0rbac3q5S2lVLaVkppq7rphtpu/Qv1UVVKW/UV&#x2B;m2qm25U&#x2B;mv0DSqltFXddONFU/SWF6W0rbSd3qxS2lZKaVsppa3qphtqu/Uv1EdVKW1VSttf7Cv0216U0rZSSlvVTTeu7/x76S6lrUppq7rpxi92atZ/Qf3RVUpbldL2F/sK/bYXpbStlNJWddON6zv/XrpLaatS2qpuuvGLnZr1X1B/dJXSVqW0/cW&#x2B;Qr/tRSltK6W0Vd104/rOv5fuUtqqlLaqm278Yqdm/RfUH12ltFUpbX&#x2B;xr9Bve1FK20opbVU33bi&#x2B;8&#x2B;&#x2B;lu5S2KqWt6qYbv9ipWf8F9UdXKW1VSttf7Cv0216U0rZSSlvVTTeu7/x76S6lrUppq7rpxi92atZ/Qf3RVUpbldL2F/sK/bYXpbStlNJWddON6zv/XrpLaatS2qpuuvGLnZr1X1B/dJXSVqW0/cW&#x2B;Qr/tRSltK6W0Vd104/rOv5fuUtqqlLaqm278Yqdm/RfUH12ltFUpbX&#x2B;xr9Bve1FK20opbVU33bi&#x2B;8&#x2B;&#x2B;lu5S2KqWt6qYbv9ipWf8F9UdXKW1VSttf7Cv0216U0rZSSlvVTTeu7/x76S6lrUppq7rpxi92atZ/Qf3RVUpbldL2F/sK/bYXpbStlNJWddON6zv/XrpLaatS2qpuuvGLnZo/9wX1j&#x2B;hFU/SWF6W0rZTS9hdLabupKXpLpZS2L0ppq7rphkppq1LaqpS2aoreorrphvqK7/ySkP6YL5qit7wopW2llLa/WErbTU3RWyqltH1RSlvVTTdUSluV0laltFVT9BbVTTfUV3znl4T0x3zRFL3lRSltK6W0/cVS2m5qit5SKaXti1Laqm66oVLaqpS2KqWtmqK3qG66ob7iO78kpD/mi6boLS9KaVsppe0vltJ2U1P0lkopbV&#x2B;U0lZ10w2V0laltFUpbdUUvUV10w31Fd/5JSH9MV80RW95UUrbSiltf7GUtpuaordUSmn7opS2qptuqJS2KqWtSmmrpugtqptuqK/4zi8J6Y/5oil6y4tS2lZKafuLpbTd1BS9pVJK2xeltFXddEOltFUpbVVKWzVFb1HddEN9xXd&#x2B;SUh/zBdN0VtelNK2UkrbXyyl7aam6C2VUtq&#x2B;KKWt6qYbKqWtSmmrUtqqKXqL6qYb6iu&#x2B;80tC&#x2B;mO&#x2B;aIre8qKUtpVS2v5iKW03NUVvqZTS9kUpbVU33VApbVVKW5XSVk3RW1Q33VBf8Z1fEtIf80VT9JYXpbStlNL2F0tpu6kpekullLYvSmmruumGSmmrUtqqlLZqit6iuumG&#x2B;orv/JKQ/pgvmqK3vCilbaWUtr9YSttNTdFbKqW0fVFKW9VNN1RKW5XSVqW0VVP0FtVNN9RXrP8l&#x2B;vhqit6iUtqqlLYqpa1KafuilLYv6qYbKqVtpZS2KqXti7rphkppq7rphkppq1LaviilrUppq1LaqpS2arv1L9RHVVP0FpXSVqW0VSltVUrbF6W0fVE33VApbSultFUpbV/UTTdUSlvVTTdUSluV0vZFKW1VSluV0laltFXbrX&#x2B;hPqqaoreolLYqpa1KaatS2r4ope2LuumGSmlbKaWtSmn7om66oVLaqm66oVLaqpS2L0ppq1LaqpS2KqWt2m79C/VR1RS9RaW0VSltVUpbldL2RSltX9RNN1RK20opbVVK2xd10w2V0lZ10w2V0laltH1RSluV0laltFUpbdV261&#x2B;oj6qm6C0qpa1KaatS2qqUti9KafuibrqhUtpWSmmrUtq&#x2B;qJtuqJS2qptuqJS2KqXti1LaqpS2KqWtSmmrtlv/Qn1UNUVvUSltVUpbldJWpbR9UUrbF3XTDZXStlJKW5XS9kXddEOltFXddEOltFUpbV&#x2B;U0laltFUpbVVKW7Xd&#x2B;hfqo6opeotKaatS2qqUtiql7YtS2r6om26olLaVUtqqlLYv6qYbKqWt6qYbKqWtSmn7opS2KqWtSmmrUtqq7da/UB9VTdFbVEpbldJWpbRVKW1flNL2Rd10Q6W0rZTSVqW0fVE33VApbVU33VApbVVK2xeltFUpbVVKW5XSVm23/oX6qGqK3qJS2qqUtiqlrUpp&#x2B;6KUti/qphsqpW2llLYqpe2LuumGSmmruumGSmmrUtq&#x2B;KKWtSmmrUtqqlLZqu/Uv1EdVU/QWldJWpbRVKW1VStsXpbR9UTfdUCltK6W0VSltX9RNN1RKW9VNN1RKW5XS9kUpbVVKW5XSVqW0Vdutf6E&#x2B;qkppq1Laqil6S6WUtpW66caLpugtlVLaqil6S6WUtpW66YZKaVupm26obrqhpugtlY6t/zL6Y6qUtiqlrZqit1RKaVupm268aIreUimlrZqit1RKaVupm26olLaVuumG6qYbaoreUunY&#x2B;i&#x2B;jP6ZKaatS2qopekullLaVuunGi6boLZVS2qopekullLaVuumGSmlbqZtuqG66oaboLZWOrf8y&#x2B;mOqlLYqpa2aordUSmlbqZtuvGiK3lIppa2aordUSmlbqZtuqJS2lbrphuqmG2qK3lLp2Povoz&#x2B;mSmmrUtqqKXpLpZS2lbrpxoum6C2VUtqqKXpLpZS2lbrphkppW6mbbqhuuqGm6C2Vjq3/MvpjqpS2KqWtmqK3VEppW6mbbrxoit5SKaWtmqK3VEppW6mbbqiUtpW66Ybqphtqit5S6dj6L6M/pkppq1Laqil6S6WUtpW66caLpugtlVLaqil6S6WUtpW66YZKaVupm26obrqhpugtlY6t/zL6Y6qUtiqlrZqit1RKaVupm268aIreUimlrZqit1RKaVupm26olLaVuumG6qYbaoreUunY&#x2B;i&#x2B;jP6ZKaatS2qopekullLaVuunGi6boLZVS2qopekullLaVuumGSmlbqZtuqG66oaboLZWOrf8y&#x2B;mOqlLYqpa2aordUSmlbqZtuvGiK3lIppa2aordUSmlbqZtuqJS2lbrphuqmG2qK3lLp2Povoz/mi1La/mJT9BaV0rZSN92olNK2UkrbL5fStlI33ajUTTfUFL3ly6W0VX/N&#x2B;l&#x2B;sP9KLUtr&#x2B;YlP0FpXStlI33aiU0rZSStsvl9K2UjfdqNRNN9QUveXLpbRVf836X6w/0otS2v5iU/QWldK2UjfdqJTStlJK2y&#x2B;X0rZSN92o1E031BS95cultFV/zfpfrD/Si1La/mJT9BaV0rZSN92olNK2UkrbL5fStlI33ajUTTfUFL3ly6W0VX/N&#x2B;l&#x2B;sP9KLUtr&#x2B;YlP0FpXStlI33aiU0rZSStsvl9K2UjfdqNRNN9QUveXLpbRVf836X6w/0otS2v5iU/QWldK2UjfdqJTStlJK2y&#x2B;X0rZSN92o1E031BS95cultFV/zfpfrD/Si1La/mJT9BaV0rZSN92olNK2UkrbL5fStlI33ajUTTfUFL3ly6W0VX/N&#x2B;l&#x2B;sP9KLUtr&#x2B;YlP0FpXStlI33aiU0rZSStsvl9K2UjfdqNRNN9QUveXLpbRVf836X6w/0otS2v5iU/QWldK2UjfdqJTStlJK2y&#x2B;X0rZSN92o1E031BS95cultFV/zfpfrD/Si1La/mJT9BaV0rZSN92olNK2UkrbL5fStlI33ajUTTfUFL3ly6W0VX/N&#x2B;l&#x2B;sP5Kaoreobrrxom66oaboLaqbblRKafvlpugtKqWtSmlbKaVtpZS2v1hK2xd10w213foX6qOqKXqL6qYbL&#x2B;qmG2qK3qK66UallLZfboreolLaqpS2lVLaVkpp&#x2B;4ultH1RN91Q261/oT6qmqK3qG668aJuuqGm6C2qm25USmn75aboLSqlrUppWymlbaWUtr9YStsXddMNtd36F&#x2B;qjqil6i&#x2B;qmGy/qphtqit6iuulGpZS2X26K3qJS2qqUtpVS2lZKafuLpbR9UTfdUNutf6E&#x2B;qpqit6huuvGibrqhpugtqptuVEpp&#x2B;&#x2B;Wm6C0qpa1KaVsppW2llLa/WErbF3XTDbXd&#x2B;hfqo6opeovqphsv6qYbaoreorrpRqWUtl9uit6iUtqqlLaVUtpWSmn7i6W0fVE33VDbrX&#x2B;hPqqaoreobrrxom66oaboLaqbblRKafvlpugtKqWtSmlbKaVtpZS2v1hK2xd10w213foX6qOqKXqL6qYbL&#x2B;qmG2qK3qK66UallLZfboreolLaqpS2lVLaVkpp&#x2B;4ultH1RN91Q261/oT6qmqK3qG668aJuuqGm6C2qm25USmn75aboLSqlrUppWymlbaWUtr9YStsXddMNtd36F&#x2B;qjqil6i&#x2B;qmGy/qphtqit6iuulGpZS2X26K3qJS2qqUtpVS2lZKafuLpbR9UTfdUNvtf2FIH1&#x2B;ltN1UN91QKW0rddMNNUVvqZTS9kUpbStN0VtUN92olNK2Ujfd2FRK2xdN0VvUdvtfGNLHVyltN9VNN1RK20rddENN0VsqpbR9UUrbSlP0FtVNNyqltK3UTTc2ldL2RVP0FrXd/heG9PFVSttNddMNldK2UjfdUFP0lkopbV&#x2B;U0rbSFL1FddONSiltK3XTjU2ltH3RFL1Fbbf/hSF9fJXSdlPddEOltK3UTTfUFL2lUkrbF6W0rTRFb1HddKNSSttK3XRjUyltXzRFb1Hb7X9hSB9fpbTdVDfdUCltK3XTDTVFb6mU0vZFKW0rTdFbVDfdqJTStlI33dhUStsXTdFb1Hb7XxjSx1cpbTfVTTdUSttK3XRDTdFbKqW0fVFK20pT9BbVTTcqpbSt1E03NpXS9kVT9Ba13f4XhvTxVUrbTXXTDZXStlI33VBT9JZKKW1flNK20hS9RXXTjUopbSt1041NpbR90RS9RW23/4UhfXyV0nZT3XRDpbSt1E031BS9pVJK2xeltK00RW9R3XSjUkrbSt10Y1MpbV80RW9R2&#x2B;1/YUgfX6W03VQ33VApbSt10w01RW&#x2B;plNL2RSltK03RW1Q33aiU0rZSN93YVErbF03RW9R2&#x2B;18Y0sdXKW031U03VErbSt10Q03RWyqltH1RSttKU/QW1U03KqW0rdRNNzaV0vZFU/QWtd3&#x2B;F4b08VVK2xeltK3UTTdUSluV0vbLpbSt1E03VEpb1U03Kv01&#x2B;gYqpe2LuulGpZS2KqWt&#x2B;orP/BL9kVRK2xeltK3UTTdUSluV0vbLpbSt1E03VEpb1U03Kv01&#x2B;gYqpe2LuulGpZS2KqWt&#x2B;orP/BL9kVRK2xeltK3UTTdUSluV0vbLpbSt1E03VEpb1U03Kv01&#x2B;gYqpe2LuulGpZS2KqWt&#x2B;orP/BL9kVRK2xeltK3UTTdUSluV0vbLpbSt1E03VEpb1U03Kv01&#x2B;gYqpe2LuulGpZS2KqWt&#x2B;orP/BL9kVRK2xeltK3UTTdUSluV0vbLpbSt1E03VEpb1U03Kv01&#x2B;gYqpe2LuulGpZS2KqWt&#x2B;orP/BL9kVRK2xeltK3UTTdUSluV0vbLpbSt1E03VEpb1U03Kv01&#x2B;gYqpe2LuulGpZS2KqWt&#x2B;orP/BL9kVRK2xeltK3UTTdUSluV0vbLpbSt1E03VEpb1U03Kv01&#x2B;gYqpe2LuulGpZS2KqWt&#x2B;orP/BL9kVRK2xeltK3UTTdUSluV0vbLpbSt1E03VEpb1U03Kv01&#x2B;gYqpe2LuulGpZS2KqWt&#x2B;orP/BL9kVRK2xeltK3UTTdUSluV0vbLpbSt1E03VEpb1U03Kv01&#x2B;gYqpe2LuulGpZS2KqWt&#x2B;orP/BL9kVRK2xeltK3UTTdUSluV0vbLpbSt1E03VEpb1U03Kv01&#x2B;gYqpe2LuulGpZS2KqWt&#x2B;or1v0Qfv9J2erOaore8KKWtSmmrUtq&#x2B;KKWtSmn7oil6i0ppWyml7S82RW&#x2B;plNJWnV3W/0X0j6jSdnqzmqK3vCilrUppq1LaviilrUpp&#x2B;6IpeotKaVsppe0vNkVvqZTSVp1d1v9F9I&#x2B;o0nZ6s5qit7wopa1KaatS2r4opa1KafuiKXqLSmlbKaXtLzZFb6mU0ladXdb/RfSPqNJ2erOaore8KKWtSmmrUtq&#x2B;KKWtSmn7oil6i0ppWyml7S82RW&#x2B;plNJWnV3W/0X0j6jSdnqzmqK3vCilrUppq1LaviilrUpp&#x2B;6IpeotKaVsppe0vNkVvqZTSVp1d1v9F9I&#x2B;o0nZ6s5qit7wopa1KaatS2r4opa1KafuiKXqLSmlbKaXtLzZFb6mU0ladXdb/RfSPqNJ2erOaore8KKWtSmmrUtq&#x2B;KKWtSmn7oil6i0ppWyml7S82RW&#x2B;plNJWnV3W/0X0j6jSdnqzmqK3vCilrUppq1LaviilrUpp&#x2B;6IpeotKaVsppe0vNkVvqZTSVp1d1v9F9I&#x2B;o0nZ6s5qit7wopa1KaatS2r4opa1KafuiKXqLSmlbKaXtLzZFb6mU0ladXdb/RfSPqNJ2erOaore8KKWtSmmrUtq&#x2B;KKWtSmn7oil6i0ppWyml7S82RW&#x2B;plNJWnV0&#x2B;8xfRP7ZNddMNldJWpbR9UTfdUN10Q6W0Vd10o9LZRX8jldK2UjfdqJTSVqW0rdRNNyptt/&#x2B;FIX38TXXTDZXSVqW0fVE33VDddEOltFXddKPS2UV/I5XStlI33aiU0laltK3UTTcqbbf/hSF9/E110w2V0laltH1RN91Q3XRDpbRV3XSj0tlFfyOV0rZSN92olNJWpbSt1E03Km23/4UhffxNddMNldJWpbR9UTfdUN10Q6W0Vd10o9LZRX8jldK2UjfdqJTSVqW0rdRNNyptt/&#x2B;FIX38TXXTDZXSVqW0fVE33VDddEOltFXddKPS2UV/I5XStlI33aiU0laltK3UTTcqbbf/hSF9/E110w2V0laltH1RN91Q3XRDpbRV3XSj0tlFfyOV0rZSN92olNJWpbSt1E03Km23/4UhffxNddMNldJWpbR9UTfdUN10Q6W0Vd10o9LZRX8jldK2UjfdqJTSVqW0rdRNNyptt/&#x2B;FIX38TXXTDZXSVqW0fVE33VDddEOltFXddKPS2UV/I5XStlI33aiU0laltK3UTTcqbbf/hSF9/E110w2V0laltH1RN91Q3XRDpbRV3XSj0tlFfyOV0rZSN92olNJWpbSt1E03Km23/4UhffxNddMNldJWpbR9UTfdUN10Q6W0Vd10o9LZRX8jldK2UjfdqJTSVqW0rdRNNyptt/&#x2B;FIX38St10o1I33aj01&#x2B;gbvKibbqiUtiqlrZqit1SaordsKqXti6boLWqK3qJS2qrt9r8wpI9fqZtuVOqmG5X&#x2B;Gn2DF3XTDZXSVqW0VVP0lkpT9JZNpbR90RS9RU3RW1RKW7Xd/heG9PErddONSt10o9Jfo2/wom66oVLaqpS2aoreUmmK3rKplLYvmqK3qCl6i0ppq7bb/8KQPn6lbrpRqZtuVPpr9A1e1E03VEpbldJWTdFbKk3RWzaV0vZFU/QWNUVvUSlt1Xb7XxjSx6/UTTcqddONSn&#x2B;NvsGLuumGSmmrUtqqKXpLpSl6y6ZS2r5oit6ipugtKqWt2m7/C0P6&#x2B;JW66UalbrpR6a/RN3hRN91QKW1VSls1RW&#x2B;pNEVv2VRK2xdN0VvUFL1FpbRV2&#x2B;1/YUgfv1I33ajUTTcq/TX6Bi/qphsqpa1Kaaum6C2Vpugtm0pp&#x2B;6IpeouaoreolLZqu/0vDOnjV&#x2B;qmG5W66Ualv0bf4EXddEOltFUpbdUUvaXSFL1lUyltXzRFb1FT9BaV0lZtt/&#x2B;FIX38St10o1I33aj01&#x2B;gbvKibbqiUtiqlrZqit1SaordsKqXti6boLWqK3qJS2qrt9r8wpI9fqZtuVOqmG5X&#x2B;Gn2DF3XTDZXSVqW0VVP0lkpT9JZNpbR90RS9RU3RW1RKW7Xd&#x2B;hfqo1ZKafuilLaqm278Yilt1RS95UUpbTc1RW&#x2B;pNEVvUd10Q03RW17UTTcqpbSttN36F&#x2B;qjVkpp&#x2B;6KUtqqbbvxiKW3VFL3lRSltNzVFb6k0RW9R3XRDTdFbXtRNNyqltK203foX6qNWSmn7opS2qptu/GIpbdUUveVFKW03NUVvqTRFb1HddENN0Vte1E03KqW0rbTd&#x2B;hfqo1ZKafuilLaqm278Yilt1RS95UUpbTc1RW&#x2B;pNEVvUd10Q03RW17UTTcqpbSttN36F&#x2B;qjVkpp&#x2B;6KUtqqbbvxiKW3VFL3lRSltNzVFb6k0RW9R3XRDTdFbXtRNNyqltK203foX6qNWSmn7opS2qptu/GIpbdUUveVFKW03NUVvqTRFb1HddENN0Vte1E03KqW0rbTd&#x2B;hfqo1ZKafuilLaqm278Yilt1RS95UUpbTc1RW&#x2B;pNEVvUd10Q03RW17UTTcqpbSttN36F&#x2B;qjVkpp&#x2B;6KUtqqbbvxiKW3VFL3lRSltNzVFb6k0RW9R3XRDTdFbXtRNNyqltK203foX6qNWSmn7opS2qptu/GIpbdUUveVFKW03NUVvqTRFb1HddENN0Vte1E03KqW0rbTd&#x2B;hfqo1ZKafuilLaqm278Yilt1RS95UUpbTc1RW&#x2B;pNEVvUd10Q03RW17UTTcqpbSttN3&#x2B;F4b08StN0VtUSttKU/SWSn&#x2B;NvsGLUtqqKXqLSmlbaYreorrphkpp&#x2B;4ultFUpbVVKW/UVn/kl&#x2B;iNVmqK3qJS2laboLZX&#x2B;Gn2DF6W0VVP0FpXSttIUvUV10w2V0vYXS2mrUtqqlLbqKz7zS/RHqjRFb1EpbStN0Vsq/TX6Bi9Kaaum6C0qpW2lKXqL6qYbKqXtL5bSVqW0VSlt1Vd85pfoj1Rpit6iUtpWmqK3VPpr9A1elNJWTdFbVErbSlP0FtVNN1RK218spa1KaatS2qqv&#x2B;Mwv0R&#x2B;p0hS9RaW0rTRFb6n01&#x2B;gbvCilrZqit6iUtpWm6C2qm26olLa/WEpbldJWpbRVX/GZX6I/UqUpeotKaVtpit5S6a/RN3hRSls1RW9RKW0rTdFbVDfdUCltf7GUtiqlrUppq77iM79Ef6RKU/QWldK20hS9pdJfo2/wopS2aoreolLaVpqit6huuqFS2v5iKW1VSluV0lZ9xWd&#x2B;if5IlaboLSqlbaUpekulv0bf4EUpbdUUvUWltK00RW9R3XRDpbT9xVLaqpS2KqWt&#x2B;orP/BL9kSpN0VtUSttKU/SWSn&#x2B;NvsGLUtqqKXqLSmlbaYreorrphkpp&#x2B;4ultFUpbVVKW/UVn/kl&#x2B;iNVmqK3qJS2laboLZX&#x2B;Gn2DF6W0VVP0FpXSttIUvUV10w2V0vYXS2mrUtqqlLbqK9b/En38TW2nN/9i2&#x2B;nNqptuqK/Qb1MpbdV2erPqphsqpa1KaatS2qqUtiql7aZS2lbabv0L9VE3tZ3e/IttpzerbrqhvkK/TaW0VdvpzaqbbqiUtiqlrUppq1LaqpS2m0ppW2m79S/UR93UdnrzL7ad3qy66Yb6Cv02ldJWbac3q266oVLaqpS2KqWtSmmrUtpuKqVtpe3Wv1AfdVPb6c2/2HZ6s&#x2B;qmG&#x2B;or9NtUSlu1nd6suumGSmmrUtqqlLYqpa1KabuplLaVtlv/Qn3UTW2nN/9i2&#x2B;nNqptuqK/Qb1MpbdV2erPqphsqpa1KaatS2qqUtiql7aZS2lbabv0L9VE3tZ3e/IttpzerbrqhvkK/TaW0VdvpzaqbbqiUtiqlrUppq1LaqpS2m0ppW2m79S/UR93UdnrzL7ad3qy66Yb6Cv02ldJWbac3q266oVLaqpS2KqWtSmmrUtpuKqVtpe3Wv1AfdVPb6c2/2HZ6s&#x2B;qmG&#x2B;or9NtUSlu1nd6suumGSmmrUtqqlLYqpa1KabuplLaVtlv/Qn3UTW2nN/9i2&#x2B;nNqptuqK/Qb1MpbdV2erPqphsqpa1KaatS2qqUtiql7aZS2lbabv0L9VE3tZ3e/IttpzerbrqhvkK/TaW0VdvpzaqbbqiUtiqlrUppq1LaqpS2m0ppW2m79S/UR62U0lZ1041K2&#x2B;nNKqXti7rpxou205tftJ3e/KKUtmqK3lIppe2mttOb1XbrX6iPWimlreqmG5W205tVStsXddONF22nN79oO735RSlt1RS9pVJK201tpzer7da/UB&#x2B;1Ukpb1U03Km2nN6uUti/qphsv2k5vftF2evOLUtqqKXpLpZS2m9pOb1bbrX&#x2B;hPmqllLaqm25U2k5vViltX9RNN160nd78ou305heltFVT9JZKKW03tZ3erLZb/0J91EopbVU33ai0nd6sUtq&#x2B;qJtuvGg7vflF2&#x2B;nNL0ppq6boLZVS2m5qO71Zbbf&#x2B;hfqolVLaqm66UWk7vVmltH1RN9140XZ684u205tflNJWTdFbKqW03dR2erPabv0L9VErpbRV3XSj0nZ6s0pp&#x2B;6JuuvGi7fTmF22nN78opa2aordUSmm7qe30ZrXd&#x2B;hfqo1ZKaau66Ual7fRmldL2Rd1040Xb6c0v2k5vflFKWzVFb6mU0nZT2&#x2B;nNarv1L9RHrZTSVnXTjUrb6c0qpe2LuunGi7bTm1&#x2B;0nd78opS2aoreUiml7aa205vVdutfqI9aKaWt6qYblbbTm1VK2xd1040Xbac3v2g7vflFKW3VFL2lUkrbTW2nN6vt1r9QH1VN0VvUdnrzi7rphkppu6kpekullLaqm26obrpRKaVtpW66oVLaqpS2lbbTm1U33VDbrX&#x2B;hPqqaoreo7fTmF3XTDZXSdlNT9JZKKW1VN91Q3XSjUkrbSt10Q6W0VSltK22nN6tuuqG2W/9CfVQ1RW9R2&#x2B;nNL&#x2B;qmGyql7aam6C2VUtqqbrqhuulGpZS2lbrphkppq1LaVtpOb1bddENtt/6F&#x2B;qhqit6ittObX9RNN1RK201N0VsqpbRV3XRDddONSiltK3XTDZXSVqW0rbSd3qy66Ybabv0L9VHVFL1Fbac3v6ibbqiUtpuaordUSmmruumG6qYblVLaVuqmGyqlrUppW2k7vVl10w213foX6qOqKXqL2k5vflE33VApbTc1RW&#x2B;plNJWddMN1U03KqW0rdRNN1RKW5XSttJ2erPqphtqu/Uv1EdVU/QWtZ3e/KJuuqFS2m5qit5SKaWt6qYbqptuVEppW6mbbqiUtiqlbaXt9GbVTTfUdutfqI&#x2B;qpugtaju9&#x2B;UXddEOltN3UFL2lUkpb1U03VDfdqJTStlI33VApbVVK20rb6c2qm26o7da/UB9VTdFb1HZ684u66YZKabupKXpLpZS2qptuqG66USmlbaVuuqFS2qqUtpW205tVN91Q261/oT6qmqK3qO305hd10w2V0nZTU/SWSiltVTfdUN10o1JK20rddEOltFUpbSttpzerbrqhtlv/Qn1U1U03VErbTaW0VVP0lkrddKNSN934ciltVUrbTaW0rTRFb1EpbTeV0laltK30Fet/iT6&#x2B;6qYbKqXtplLaqil6S6VuulGpm258uZS2KqXtplLaVpqit6iUtptKaatS2lb6ivW/RB9fddMNldJ2Uylt1RS9pVI33ajUTTe&#x2B;XEpbldJ2UyltK03RW1RK202ltFUpbSt9xfpfoo&#x2B;vuumGSmm7qZS2aoreUqmbblTqphtfLqWtSmm7qZS2laboLSql7aZS2qqUtpW&#x2B;Yv0v0cdX3XRDpbTdVEpbNUVvqdRNNyp1040vl9JWpbTdVErbSlP0FpXSdlMpbVVK20pfsf6X6OOrbrqhUtpuKqWtmqK3VOqmG5W66caXS2mrUtpuKqVtpSl6i0ppu6mUtiqlbaWvWP9L9PFVN91QKW03ldJWTdFbKnXTjUrddOPLpbRVKW03ldK20hS9RaW03VRKW5XSttJXrP8l&#x2B;viqm26olLabSmmrpugtlbrpRqVuuvHlUtqqlLabSmlbaYreolLabiqlrUppW&#x2B;kr1v8SfXzVTTdUSttNpbRVU/SWSt10o1I33fhyKW1VSttNpbStNEVvUSltN5XSVqW0rfQV63&#x2B;JPr7qphsqpe2mUtqqKXpLpW66Uambbny5lLYqpe2mUtpWmqK3qJS2m0ppq1LaVvqK7/ySkP6Y6iv021RKW5XStlJK20rb6c0qpa1Kaav&#x2B;Gn2DSt10Q6W0vfZ/v1Pz576g/hGpr9BvUyltVUrbSiltK22nN6uUtiqlrfpr9A0qddMNldL22v/9Ts2f&#x2B;4L6R6S&#x2B;Qr9NpbRVKW0rpbSttJ3erFLaqpS26q/RN6jUTTdUSttr//c7NX/uC&#x2B;ofkfoK/TaV0laltK2U0rbSdnqzSmmrUtqqv0bfoFI33VApba/93&#x2B;/U/LkvqH9E6iv021RKW5XStlJK20rb6c0qpa1Kaav&#x2B;Gn2DSt10Q6W0vfZ/v1Pz576g/hGpr9BvUyltVUrbSiltK22nN6uUtiqlrfpr9A0qddMNldL22v/9Ts2f&#x2B;4L6R6S&#x2B;Qr9NpbRVKW0rpbSttJ3erFLaqpS26q/RN6jUTTdUSttr//c7NX/uC&#x2B;ofkfoK/TaV0laltK2U0rbSdnqzSmmrUtqqv0bfoFI33VApba/93&#x2B;/U/LkvqH9E6iv021RKW5XStlJK20rb6c0qpa1Kaav&#x2B;Gn2DSt10Q6W0vfZ/v1Pz576g/hGpr9BvUyltVUrbSiltK22nN6uUtiqlrfpr9A0qddMNldL22v/9Ts36L6g/eqWUtpuaoreolLYvSmlbKaXtplLaqpS2qptuqJS2lU6NvummUtqqbrpRKaWt2m79C/VRK6W03dQUvUWltH1RSttKKW03ldJWpbRV3XRDpbStdGr0TTeV0lZ1041KKW3VdutfqI9aKaXtpqboLSql7YtS2lZKabuplLYqpa3qphsqpW2lU6NvuqmUtqqbblRKaau2W/9CfdRKKW03NUVvUSltX5TStlJK202ltFUpbVU33VApbSudGn3TTaW0Vd10o1JKW7Xd&#x2B;hfqo1ZKabupKXqLSmn7opS2lVLabiqlrUppq7rphkppW&#x2B;nU6JtuKqWt6qYblVLaqu3Wv1AftVJK201N0VtUStsXpbStlNJ2UyltVUpb1U03VErbSqdG33RTKW1VN92olNJWbbf&#x2B;hfqolVLabmqK3qJS2r4opW2llLabSmmrUtqqbrqhUtpWOjX6pptKaau66UallLZqu/Uv1EetlNJ2U1P0FpXS9kUpbSultN1USluV0lZ10w2V0rbSqdE33VRKW9VNNyqltFXbrX&#x2B;hPmqllLabmqK3qJS2L0ppWyml7aZS2qqUtqqbbqiUtpVOjb7pplLaqm66USmlrdpu/Qv1USultN3UFL1FpbR9UUrbSiltN5XSVqW0Vd10Q6W0rXRq9E03ldJWddONSilt1Xaf&#x2B;V&#x2B;wPn6lv0bfQE3RWyr9NfoGV/7vQFuV0vb6zv8u9dtelNL2Rd10Q233mX/5&#x2B;viV/hp9AzVFb6n01&#x2B;gbXPm/A21VStvrO/&#x2B;71G97UUrbF3XTDbXdZ/7l6&#x2B;NX&#x2B;mv0DdQUvaXSX6NvcOX/DrRVKW2v7/zvUr/tRSltX9RNN9R2n/mXr49f6a/RN1BT9JZKf42&#x2B;wZX/O9BWpbS9vvO/S/22F6W0fVE33VDbfeZfvj5&#x2B;pb9G30BN0Vsq/TX6Blf&#x2B;70BbldL2&#x2B;s7/LvXbXpTS9kXddENt95l/&#x2B;fr4lf4afQM1RW&#x2B;p9NfoG1z5vwNtVUrb6zv/u9Rve1FK2xd10w213Wf&#x2B;5evjV/pr9A3UFL2l0l&#x2B;jb3Dl/w60VSltr&#x2B;/871K/7UUpbV/UTTfUdp/5l6&#x2B;PX&#x2B;mv0TdQU/SWSn&#x2B;NvsGV/zvQVqW0vb7zv0v9theltH1RN91Q233mX74&#x2B;fqW/Rt9ATdFbKv01&#x2B;gZX/u9AW5XS9vrO/y71216U0vZF3XRDbfeZf/n6&#x2B;JX&#x2B;Gn0DNUVvqfTX6Btc&#x2B;b8DbVVK2&#x2B;s7/7vUb3tRStsXddMNtd13/uU30x9TddONF6W0fVFK20opbSt10w2V0vb6zt8tpW2llLYqpe2V1003Km23/4VD9MdU3XTjRSltX5TStlJK20rddEOltL2&#x2B;83dLaVsppa1KaXvlddONStvtf&#x2B;EQ/TFVN914UUrbF6W0rZTStlI33VApba/v/N1S2lZKaatS2l553XSj0nb7XzhEf0zVTTdelNL2RSltK6W0rdRNN1RK2&#x2B;s7f7eUtpVS2qqUtldeN92otN3&#x2B;Fw7RH1N1040XpbR9UUrbSiltK3XTDZXS9vrO3y2lbaWUtiql7ZXXTTcqbbf/hUP0x1TddONFKW1flNK2UkrbSt10Q6W0vb7zd0tpWymlrUppe&#x2B;V1041K2&#x2B;1/4RD9MVU33XhRStsXpbStlNK2UjfdUCltr&#x2B;/83VLaVkppq1LaXnnddKPSdvtfOER/TNVNN16U0vZFKW0rpbSt1E03VErb6zt/t5S2lVLaqpS2V1433ai03f4XDtEfU3XTjReltH1RSttKKW0rddMNldL2&#x2B;s7fLaVtpZS2KqXtlddNNyptt/&#x2B;FQ/THVN1040UpbV&#x2B;U0rZSSttK3XRDpbS9vvN3S2lbKaWtSml75XXTjUrb7X/hKdE/ykopbV&#x2B;U0laltK2U0rZSSttKU/SWSiltX7Sd3lwppe2mpugtlVLaVtpu/wtPif5RVkpp&#x2B;6KUtiqlbaWUtpVS2laaordUSmn7ou305kopbTc1RW&#x2B;plNK20nb7X3hK9I&#x2B;yUkrbF6W0VSltK6W0rZTSttIUvaVSStsXbac3V0ppu6kpekullLaVttv/wlOif5SVUtq&#x2B;KKWtSmlbKaVtpZS2laboLZVS2r5oO725UkrbTU3RWyqltK203f4XnhL9o6yU0vZFKW1VSttKKW0rpbStNEVvqZTS9kXb6c2VUtpuaoreUimlbaXt9r/wlOgfZaWUti9KaatS2lZKaVsppW2lKXpLpZS2L9pOb66U0nZTU/SWSiltK223/4WnRP8oK6W0fVFKW5XStlJK20opbStN0VsqpbR90XZ6c6WUtpuaordUSmlbabv9Lzwl&#x2B;kdZKaXti1LaqpS2lVLaVkppW2mK3lIppe2LttObK6W03dQUvaVSSttK2&#x2B;1/4SnRP8pKKW1flNJWpbStlNK2UkrbSlP0lkopbV&#x2B;0nd5cKaXtpqboLZVS2lbabv8LT4n&#x2B;UVZKafuilLYqpW2llLaVUtpWmqK3VEpp&#x2B;6Lt9OZKKW03NUVvqZTSttJ261&#x2B;oj3rt/4c1Rd9KpbTdVDfdeFFKW5XSdlMpbdUUveVFKW1VN91QKW1VStsXpbRV261/oT7qtf8f1hR9K5XSdlPddONFKW1VSttNpbRVU/SWF6W0Vd10Q6W0VSltX5TSVm23/oX6qNf&#x2B;f1hT9K1USttNddONF6W0VSltN5XSVk3RW16U0lZ10w2V0laltH1RSlu13foX6qNe&#x2B;/9hTdG3UiltN9VNN16U0laltN1USls1RW95UUpb1U03VEpbldL2RSlt1XbrX6iPeu3/hzVF30qltN1UN914UUpbldJ2Uylt1RS95UUpbVU33VApbVVK2xeltFXbrX&#x2B;hPuq1/x/WFH0rldJ2U91040UpbVVK202ltFVT9JYXpbRV3XRDpbRVKW1flNJWbbf&#x2B;hfqo1/5/WFP0rVRK2011040XpbRVKW03ldJWTdFbXpTSVnXTDZXSVqW0fVFKW7Xd&#x2B;hfqo177/2FN0bdSKW031U03XpTSVqW03VRKWzVFb3lRSlvVTTdUSluV0vZFKW3VdutfqI967f&#x2B;HNUXfSqW03VQ33XhRSluV0nZTKW3VFL3lRSltVTfdUCltVUrbF6W0Vdutf6E&#x2B;6rX/H9YUfSuV0nZT3XTjRSltVUrbTaW0VVP0lheltFXddEOltFUpbV&#x2B;U0lZtt/6F&#x2B;qjqK/Tb1BS95UXb6c0vSmmruumGmqK3qCl6S6WUtpVS2qqv0G9TU/SWSiltK223/oX6qOor9NvUFL3lRdvpzS9Kaau66YaaoreoKXpLpZS2lVLaqq/Qb1NT9JZKKW0rbbf&#x2B;hfqo6iv029QUveVF2&#x2B;nNL0ppq7rphpqit6gpekullLaVUtqqr9BvU1P0lkopbSttt/6F&#x2B;qjqK/Tb1BS95UXb6c0vSmmruumGmqK3qCl6S6WUtpVS2qqv0G9TU/SWSiltK223/oX6qOor9NvUFL3lRdvpzS9Kaau66YaaoreoKXpLpZS2lVLaqq/Qb1NT9JZKKW0rbbf&#x2B;hfqo6iv029QUveVF2&#x2B;nNL0ppq7rphpqit6gpekullLaVUtqqr9BvU1P0lkopbSttt/6F&#x2B;qjqK/Tb1BS95UXb6c0vSmmruumGmqK3qCl6S6WUtpVS2qqv0G9TU/SWSiltK223/oX6qOor9NvUFL3lRdvpzS9Kaau66YaaoreoKXpLpZS2lVLaqq/Qb1NT9JZKKW0rbbf&#x2B;hfqo6iv029QUveVF2&#x2B;nNL0ppq7rphpqit6gpekullLaVUtqqr9BvU1P0lkopbSttt/6F&#x2B;qjqK/Tb1BS95UXb6c0vSmmruumGmqK3qCl6S6WUtpVS2qqv0G9TU/SWSiltK223/oX6qCql7YtS2qqUtmqK3qK66UalbrpRaYre8uW66UallLabmqK3XHP/rr5i/S/Rx1cpbV&#x2B;U0laltFVT9BbVTTcqddONSlP0li/XTTcqpbTd1BS95Zr7d/UV63&#x2B;JPr5KafuilLYqpa2aoreobrpRqZtuVJqit3y5brpRKaXtpqboLdfcv6uvWP9L9PFVStsXpbRVKW3VFL1FddONSt10o9IUveXLddONSiltNzVFb7nm/l19xfpfoo&#x2B;vUtq&#x2B;KKWtSmmrpugtqptuVOqmG5Wm6C1frptuVEppu6kpess19&#x2B;/qK9b/En18ldL2RSltVUpbNUVvUd10o1I33ag0RW/5ct10o1JK201N0VuuuX9XX7H&#x2B;l&#x2B;jjq5S2L0ppq1Laqil6i&#x2B;qmG5W66UalKXrLl&#x2B;umG5VS2m5qit5yzf27&#x2B;or1v0QfX6W0fVFKW5XSVk3RW1Q33ajUTTcqTdFbvlw33aiU0nZTU/SWa&#x2B;7f1Ves/yX6&#x2B;Cql7YtS2qqUtmqK3qK66UalbrpRaYre8uW66UallLabmqK3XHP/rr5i/S/Rx1cpbV&#x2B;U0laltFVT9BbVTTcqddONSlP0li/XTTcqpbTd1BS95Zr7d/UV63&#x2B;JPr5KafuilLaqm25USmmrUtpe/f9euunNKqWtmqK3qJS2KqXtplLavqibbqiUtpVOzfovqD&#x2B;6Smn7opS2qptuVEppq1LaXv3/XrrpzSqlrZqit6iUtiql7aZS2r6om26olLaVTs36L6g/ukpp&#x2B;6KUtqqbblRKaatS2l79/1666c0qpa2aoreolLYqpe2mUtq&#x2B;qJtuqJS2lU7N&#x2B;i&#x2B;oP7pKafuilLaqm25USmmrUtpe/f9euunNKqWtmqK3qJS2KqXtplLavqibbqiUtpVOzfovqD&#x2B;6Smn7opS2qptuVEppq1LaXv3/XrrpzSqlrZqit6iUtiql7aZS2r6om26olLaVTs36L6g/ukpp&#x2B;6KUtqqbblRKaatS2l79/1666c0qpa2aoreolLYqpe2mUtq&#x2B;qJtuqJS2lU7N&#x2B;i&#x2B;oP7pKafuilLaqm25USmmrUtpe/f9euunNKqWtmqK3qJS2KqXtplLavqibbqiUtpVOzfovqD&#x2B;6Smn7opS2qptuVEppq1LaXv3/XrrpzSqlrZqit6iUtiql7aZS2r6om26olLaVTs36L6g/ukpp&#x2B;6KUtqqbblRKaatS2l79/1666c0qpa2aoreolLYqpe2mUtq&#x2B;qJtuqJS2lU7N&#x2B;i&#x2B;oP7pKafuilLaqm25USmmrUtpe/f9euunNKqWtmqK3qJS2KqXtplLavqibbqiUtpVOzfovqD&#x2B;6Smn7opS2aoreolLabqqbbrxoit6iUtpWSmm7qe305i93TN&#x2B;q0les/yX6&#x2B;Cql7YtS2qopeotKabupbrrxoil6i0ppWyml7aa205u/3DF9q0pfsf6X6OOrlLYvSmmrpugtKqXtprrpxoum6C0qpW2llLab2k5v/nLH9K0qfcX6X6KPr1LaviilrZqit6iUtpvqphsvmqK3qJS2lVLabmo7vfnLHdO3qvQV63&#x2B;JPr5KafuilLZqit6iUtpuqptuvGiK3qJS2lZKabup7fTmL3dM36rSV6z/Jfr4KqXti1Laqil6i0ppu6luuvGiKXqLSmlbKaXtprbTm7/cMX2rSl&#x2B;x/pfo46uUti9Kaaum6C0qpe2muunGi6boLSqlbaWUtpvaTm/&#x2B;csf0rSp9xfpfoo&#x2B;vUtq&#x2B;KKWtmqK3qJS2m&#x2B;qmGy&#x2B;aoreolLaVUtpuaju9&#x2B;csd07eq9BXrf4k&#x2B;vkpp&#x2B;6KUtmqK3qJS2m6qm268aIreolLaVkppu6nt9OYvd0zfqtJXrP8l&#x2B;vgqpe2LUtqqKXqLSmm7qW668aIpeotKaVsppe2mttObv9wxfatKX7H&#x2B;l&#x2B;jjq6/Qb1MpbVVKWzVFb1EpbSultFUpbStN0Vt&#x2B;sZS2KqVtpZS26iv02yqltFXddEOltK203foX6qOqr9BvUyltVUpbNUVvUSltK6W0VSltK03RW36xlLYqpW2llLbqK/TbKqW0Vd10Q6W0rbTd&#x2B;hfqo6qv0G9TKW1VSls1RW9RKW0rpbRVKW0rTdFbfrGUtiqlbaWUtuor9NsqpbRV3XRDpbSttN36F&#x2B;qjqq/Qb1MpbVVKWzVFb1EpbSultFUpbStN0Vt&#x2B;sZS2KqVtpZS26iv02yqltFXddEOltK203foX6qOqr9BvUyltVUpbNUVvUSltK6W0VSltK03RW36xlLYqpW2llLbqK/TbKqW0Vd10Q6W0rbTd&#x2B;hfqo6qv0G9TKW1VSls1RW9RKW0rpbRVKW0rTdFbfrGUtiqlbaWUtuor9NsqpbRV3XRDpbSttN36F&#x2B;qjqq/Qb1MpbVVKWzVFb1EpbSultFUpbStN0Vt&#x2B;sZS2KqVtpZS26iv02yqltFXddEOltK203foX6qOqr9BvUyltVUpbNUVvUSltK6W0VSltK03RW36xlLYqpW2llLbqK/TbKqW0Vd10Q6W0rbTd&#x2B;hfqo6qv0G9TKW1VSls1RW9RKW0rpbRVKW0rTdFbfrGUtiqlbaWUtuor9NsqpbRV3XRDpbSttN36F&#x2B;qjqq/Qb1MpbVVKWzVFb1EpbSultFUpbStN0Vt&#x2B;sZS2KqVtpZS26iv02yqltFXddEOltK203foX6qNeP/APC2&#x2B;ulNJWpbRVKW03ldJWddONSlP0lheltH3RFL2lUkpbldL2Rd10Q33F&#x2B;l&#x2B;ij3/t/weoN1dKaatS2qqUtptKaau66UalKXrLi1LavmiK3lIppa1KafuibrqhvmL9L9HHv/b/A9SbK6W0VSltVUrbTaW0Vd10o9IUveVFKW1fNEVvqZTSVqW0fVE33VBfsf6X6ONf&#x2B;/8B6s2VUtqqlLYqpe2mUtqqbrpRaYre8qKUti&#x2B;aordUSmmrUtq&#x2B;qJtuqK9Y/0v08a/9/wD15kopbVVKW5XSdlMpbVU33ag0RW95UUrbF03RWyqltFUpbV/UTTfUV6z/Jfr41/5/gHpzpZS2KqWtSmm7qZS2qptuVJqit7wope2LpugtlVLaqpS2L&#x2B;qmG&#x2B;or1v8Sffxr/z9AvblSSluV0laltN1USlvVTTcqTdFbXpTS9kVT9JZKKW1VStsXddMN9RXrf4k&#x2B;/rX/H6DeXCmlrUppq1LabiqlreqmG5Wm6C0vSmn7oil6S6WUtiql7Yu66Yb6ivW/RB//2v8PUG&#x2B;ulNJWpbRVKW03ldJWddONSlP0lheltH3RFL2lUkpbldL2Rd10Q33F&#x2B;l&#x2B;ij3/t/weoN1dKaatS2qqUtptKaau66UalKXrLi1LavmiK3lIppa1KafuibrqhvuI7v&#x2B;Scc84558fcf4idc8455wy5/xA755xzzhly/yF2zjnnnDPk/kPsnHPOOWfI/YfYOeecc86Q&#x2B;w&#x2B;xc84555wh9x9i55xzzjlD7j/EzjnnnHOG3H&#x2B;InXPOOecMuf8QO&#x2B;ecc84Zcv8hds4555wz5P5D7JxzzjlnyP2H2DnnnHPOkPsPsXPOOeecIfcfYuecc845Q&#x2B;4/xM4555xzhtx/iJ1zzjnnDLn/EDvnnHPOGXL/IXbOOeecM&#x2B;T&#x2B;Q&#x2B;ycc845Z8j9h9g555xzzpD7D7FzzjnnnCH3H2LnnHPOOUPuP8TOOeecc4bcf4idc8455wy5/xA755xzzhly/yF2zjnnnDPk/kPsnHPOOWfI/YfYOeecc86Q&#x2B;w&#x2B;xc84555wh9x9i55xzzjlD7j/EzjnnnHOG3H&#x2B;InXPOOecMuf8QO&#x2B;ecc84Zcv8hds4555wz5P5D7JxzzjlnyP2H2DnnnHPOkPsPsXPOOeecIfcfYuecc845I/73v/8D&#x2B;dGylHtkfqUAAAAASUVORK5CYII= id="imgQRCode" style="height:auto; width:100% !important" />
+        <div style="text-align:center">
+            <p class="qr-info" style="font-size:smaller">Scan QR to verify</p>
+            <p class="qr-info" style="font-size:smaller">QR يمكنك التحقق بمسح ال</p>
+        </div>
+    </div>
+</div>
+		<table>
+			<thead>
+				<tr>
+					<td>
+						<div class="header-space">&nbsp;</div>
+					</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<div class="content">
+
+<h2>Establishment Information /بيانات المنشأة</h2>
+<div class="receipt-row">
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Establishment Name / إسم المنشأة
+        </div>
+        <div class="receipt-col-detail">
+            <div class="col-left">
+                XIDA HOTEL MANAGEMENT LLC
+            </div>
+            <div class="col-right">
+                &#x627;&#x643;&#x633;&#x64A;&#x62F;&#x629; &#x644;&#x627;&#x62F;&#x627;&#x631;&#x629; &#x641;&#x646;&#x627;&#x62F;&#x642; &#x630; &#x645; &#x645;
+            </div>
+        </div>
+    </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Establishment Classification / تصنيف المنشأة
+        </div>
+        <div class="receipt-col-detail">
+            <div class="col-left">
+                
+            </div>
+            <div class="col-right">
+                
+            </div>
+        </div>
+    </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Establishment Address / عنوان المنشأة
+        </div>
+        <div class="receipt-col-detail">
+            &#x645;&#x643;&#x62A;&#x628; &#x631;&#x642;&#x645; F-D-47-9 &#x645;&#x644;&#x643; &#x645;&#x62C;&#x645;&#x639; &#x633;&#x648;&#x642; &#x627;&#x644;&#x62A;&#x646;&#x64A;&#x646; - &#x628;&#x631;&#x62F;&#x628;&#x64A; - &#x627;&#x644;&#x648;&#x631;&#x633;&#x627;&#x646; 1
+        </div>
+    </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Economic Activity / النشاط الإقتصادي
+        </div>
+        <div class="receipt-col-detail">
+            <div class="col-left">
+                Hotel Management
+            </div>
+            <div class="col-right">
+                &#x625;&#x62F;&#x627;&#x631;&#x629; &#x627;&#x644;&#x641;&#x646;&#x627;&#x62F;&#x642;
+            </div>
+        </div>
+    </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Labour Office / مكتب العمل
+        </div>
+        <div class="receipt-col-detail">
+            <div class="col-left">
+                Dubai
+            </div>
+            <div class="col-right">
+                &#x62F;&#x628;&#x649;
+            </div>
+        </div>
+    </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Emirate / الإمارة
+        </div>
+        <div class="receipt-col-detail">
+            <div class="col-left">
+                Dubai
+            </div>
+            <div class="col-right">
+                &#x62F;&#x628;&#x649;
+            </div>
+        </div>
+    </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Establishment Number / رقم المنشأة
+        </div>
+        <div class="receipt-col-detail">
+            1768027
+        </div>
+    </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Phone Number / رقم الهاتف
+        </div>
+        <div class="receipt-col-detail">
+            042360884
+        </div>
+    </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Special Number / رقم مميز
+        </div>
+        <div class="receipt-col-detail">
+            
+        </div>
+    </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            PO Box/ صندوق البريد
+        </div>
+        <div class="receipt-col-detail">
+            2
+        </div>
+    </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Fax / فاكس
+        </div>
+        <div class="receipt-col-detail">
+            
+        </div>
+    </div>
+</div>
+<hr>
+
+
+
+<h2>Applicant Information / بيانات مقدم الطلب</h2>
+<div class="receipt-row">
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Applicant Name / اسم مقدم الطلب
+        </div>
+        <div class="receipt-col-detail">
+            <div class="col-left">
+                JIANYANG LIN
+            </div>
+            <div class="col-right">
+                &#x62C;&#x64A;&#x627;&#x646;&#x64A;&#x627;&#x646;&#x63A; &#x644;&#x64A;&#x646;
+            </div>
+        </div>
+    </div>
+        <div class="receipt-col">
+            <div class="receipt-col-head">
+                Card Type / نوع البطاقة
+            </div>
+            <div class="receipt-col-detail">
+                <div class="col-left">
+                    Driving License
+                </div>
+                <div class="col-right">
+                    &#x631;&#x62E;&#x635;&#x629; &#x642;&#x64A;&#x640;&#x627;&#x62F;&#x629;
+                </div>
+            </div>
+        </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            EIDA Number / رقم الهوية
+        </div>
+        <div class="receipt-col-detail">
+            784198916772670
+        </div>
+    </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Mobile No  / الهاتف المتحرك
+        </div>
+        <div class="receipt-col-detail">
+            0528303935
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+<h2>Owner info / بيانات الملاك</h2>
+<table class="content-table">
+	<thead>
+		<tr>
+			<th>
+				<div class="block">No.</div>
+				<div class="block">رقم</div>
+			</th>
+			<th>
+				<div class="block">Owner Type</div>
+				<div class="block">نوع المالك</div>
+			</th>
+			<th>
+				<div class="block">Number</div>
+				<div class="block">الرقم</div>
+			</th>
+			<th>
+				<div class="block">Name</div>
+				<div class="block">الإسم</div>
+			</th>
+			<th>
+				<div class="block">Authorized</div>
+				<div class="block">مخول بالتوقيع</div>
+			</th>
+			<th>
+				<div class="block">Owner Type</div>
+				<div class="block">نوع المالك</div>
+			</th>
+			<th>
+				<div class="block">Owner Transaction</div>
+				<div class="block">معاملة المالك</div>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+			<tr>
+				<td>1</td>
+				<td>
+					<div class="block">Person</div>
+					<div class="block">&#x627;&#x644;&#x634;&#x62E;&#x635;</div>
+				</td>
+				<td>31429047824610</td>
+				<td>
+					<div class="block">PENG HUANG</div>
+					<div class="block">&#x628;&#x64A;&#x646;&#x62C; &#x647;&#x648;&#x627;&#x646;&#x62C;</div>
+				</td>
+				<td>
+						<div class="block">No</div>
+						<div class="block">لا</div>
+				</td>
+				<td>
+						<div class="block">Foreign</div>
+						<div class="block">أجنبي</div>
+				</td>
+				<td>MB265695945AE</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>
+					<div class="block">Person</div>
+					<div class="block">&#x627;&#x644;&#x634;&#x62E;&#x635;</div>
+				</td>
+				<td>32106119039337</td>
+				<td>
+					<div class="block">LIANGBIN CHEN</div>
+					<div class="block">&#x644;&#x64A;&#x627;&#x646;&#x62C;&#x628;&#x64A;&#x646; &#x634;&#x64A;&#x646;</div>
+				</td>
+				<td>
+						<div class="block">No</div>
+						<div class="block">لا</div>
+				</td>
+				<td>
+						<div class="block">Foreign</div>
+						<div class="block">أجنبي</div>
+				</td>
+				<td>MB265696179AE</td>
+			</tr>
+	</tbody>
+</table>
+<hr>
+<h2>Establishment Information /بيانات المنشأة</h2>
+<div class="receipt-row">
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Establishment Name / إسم المنشأة
+        </div>
+        <div class="receipt-col-detail">
+            <div class="col-left">
+                XIDA HOTEL MANAGEMENT LLC
+            </div>
+            <div class="col-right">
+                &#x627;&#x643;&#x633;&#x64A;&#x62F;&#x629; &#x644;&#x627;&#x62F;&#x627;&#x631;&#x629; &#x641;&#x646;&#x627;&#x62F;&#x642; &#x630; &#x645; &#x645;
+            </div>
+        </div>
+    </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Establishment Classification / تصنيف المنشأة
+        </div>
+        <div class="receipt-col-detail">
+            <div class="col-left">
+                
+            </div>
+            <div class="col-right">
+                
+            </div>
+        </div>
+    </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Establishment Address / عنوان المنشأة
+        </div>
+        <div class="receipt-col-detail">
+            &#x645;&#x643;&#x62A;&#x628; &#x631;&#x642;&#x645; F-D-47-9 &#x645;&#x644;&#x643; &#x645;&#x62C;&#x645;&#x639; &#x633;&#x648;&#x642; &#x627;&#x644;&#x62A;&#x646;&#x64A;&#x646; - &#x628;&#x631;&#x62F;&#x628;&#x64A; - &#x627;&#x644;&#x648;&#x631;&#x633;&#x627;&#x646; 1
+        </div>
+    </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Economic Activity / النشاط الإقتصادي
+        </div>
+        <div class="receipt-col-detail">
+            <div class="col-left">
+                Hotel Management
+            </div>
+            <div class="col-right">
+                &#x625;&#x62F;&#x627;&#x631;&#x629; &#x627;&#x644;&#x641;&#x646;&#x627;&#x62F;&#x642;
+            </div>
+        </div>
+    </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Labour Office / مكتب العمل
+        </div>
+        <div class="receipt-col-detail">
+            <div class="col-left">
+                Dubai
+            </div>
+            <div class="col-right">
+                &#x62F;&#x628;&#x649;
+            </div>
+        </div>
+    </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Emirate / الإمارة
+        </div>
+        <div class="receipt-col-detail">
+            <div class="col-left">
+                Dubai
+            </div>
+            <div class="col-right">
+                &#x62F;&#x628;&#x649;
+            </div>
+        </div>
+    </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Establishment Number / رقم المنشأة
+        </div>
+        <div class="receipt-col-detail">
+            1768027
+        </div>
+    </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Phone Number / رقم الهاتف
+        </div>
+        <div class="receipt-col-detail">
+            042360884
+        </div>
+    </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Special Number / رقم مميز
+        </div>
+        <div class="receipt-col-detail">
+            
+        </div>
+    </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            PO Box/ صندوق البريد
+        </div>
+        <div class="receipt-col-detail">
+            2
+        </div>
+    </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Fax / فاكس
+        </div>
+        <div class="receipt-col-detail">
+            
+        </div>
+    </div>
+</div>
+<hr>
+
+
+
+<h2>Applicant Information / بيانات مقدم الطلب</h2>
+<div class="receipt-row">
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Applicant Name / اسم مقدم الطلب
+        </div>
+        <div class="receipt-col-detail">
+            <div class="col-left">
+                JIANYANG LIN
+            </div>
+            <div class="col-right">
+                &#x62C;&#x64A;&#x627;&#x646;&#x64A;&#x627;&#x646;&#x63A; &#x644;&#x64A;&#x646;
+            </div>
+        </div>
+    </div>
+        <div class="receipt-col">
+            <div class="receipt-col-head">
+                Card Type / نوع البطاقة
+            </div>
+            <div class="receipt-col-detail">
+                <div class="col-left">
+                    Driving License
+                </div>
+                <div class="col-right">
+                    &#x631;&#x62E;&#x635;&#x629; &#x642;&#x64A;&#x640;&#x627;&#x62F;&#x629;
+                </div>
+            </div>
+        </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            EIDA Number / رقم الهوية
+        </div>
+        <div class="receipt-col-detail">
+            784198916772670
+        </div>
+    </div>
+    <div class="receipt-col">
+        <div class="receipt-col-head">
+            Mobile No  / الهاتف المتحرك
+        </div>
+        <div class="receipt-col-detail">
+            0528303935
+        </div>
+    </div>
+
+</div>
+
+
+
+
+						</div>
+					</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td>
+						<div class="footer-space">&nbsp;</div>
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+		
+<div class="footer">
+    <img src="/images/footer.png" alt="Img Footer">
+    <div class="footer-bottom">
+        <span class="right-footer">&#x627;&#x643;&#x633;&#x64A;&#x62F;&#x629; &#x644;&#x627;&#x62F;&#x627;&#x631;&#x629; &#x641;&#x646;&#x627;&#x62F;&#x642; &#x630; &#x645; &#x645; - MS20232366204 - &#x62C;&#x64A;&#x627;&#x646;&#x64A;&#x627;&#x646;&#x63A; &#x644;&#x64A;&#x646;</span>
+        <span class="left-footer">JIANYANG LIN - MS20232366204 - XIDA HOTEL MANAGEMENT LLC</span>
+        <span class="center-footer"><strong>13/05/2024 08:15:07</strong></span>
+    </div>
+</div>
+
+
+
+	</div>
+</body>
+
+<script>
+	function closeModal() {
+		 let _$url = "/CustomerPulseRating/CustomerPulseUpdateStatus";
+		
+		 $.post(_$url, function (data) {
+			// Handle the response if needed
+		});
+	}
+
+	function insertFeedback() {
+
+		let model = {
+			TransNo: 'MB265695944AE',
+			Sid: '88'
+		};
+
+		$.ajax({
+			url: '/CustomerPulseRating/InsertCustomerFeedback',
+			type: 'POST',
+			data: { model: model },
+			success: function (result) {
+				// Handle the success
+			},
+			error: function () {
+				// Handle the error
+			}
+		});
+	}
+	
+	window.addEventListener('so-widget-closed', () => {
+		closeModal();
+		insertFeedback();
+		console.log('✅ survey has been completed');
+	});
+
+
+</script>
+
